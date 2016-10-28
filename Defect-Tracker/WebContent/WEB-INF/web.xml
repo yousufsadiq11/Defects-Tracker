@@ -19,14 +19,15 @@
     <servlet-name>AssignRoleController</servlet-name>
     <url-pattern>/AssignRoleController</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>FrontController</display-name>
-    <servlet-name>FrontController</servlet-name>
-    <servlet-class>com.dt.utility.FrontController</servlet-class>
+    <display-name>UserListController</display-name>
+    <servlet-name>UserListController</servlet-name>
+    <servlet-class>com.dt.userList.UserListController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>FrontController</servlet-name>
-    <url-pattern>/FrontController</url-pattern>
+    <servlet-name>UserListController</servlet-name>
+    <url-pattern>/UserListController</url-pattern>
   </servlet-mapping>
 </web-app>
