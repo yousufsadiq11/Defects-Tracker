@@ -9,4 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AssignRoleController</display-name>
+    <servlet-name>AssignRoleController</servlet-name>
+    <servlet-class>com.dt.assignRole.AssignRoleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AssignRoleController</servlet-name>
+    <url-pattern>/AssignRoleController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FrontController</display-name>
+    <servlet-name>FrontController</servlet-name>
+    <servlet-class>com.dt.utility.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontController</servlet-name>
+    <url-pattern>/FrontController</url-pattern>
+  </servlet-mapping>
 </web-app>
