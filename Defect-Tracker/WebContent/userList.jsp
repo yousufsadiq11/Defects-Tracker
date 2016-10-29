@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html ng-app>
+<html ng-app='defect-tracker'>
 <head>
  
   <title>Defect Tacker | Dashboard</title>
@@ -12,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="lib/plugins/datatables/dataTables.bootstrap.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -36,7 +33,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="active">All Users</li>
       </ol>
     </section>
-
     <!-- Main content -->
     <section class="content" ng-controller="userListController">
 				<!-- Your Page Content Here -->
@@ -44,60 +40,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">Data Table With Full Features</h3>
+								<h3 class="box-title">${message}</h3>
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
 										<tr>
-											<th></th>
+											<th>User Id</th>
 											<th>Full Name</th>
 											<th>Team</th>
 											<th>Role</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr  ng-repeat="user in users">
-											<td>{{user.img}}</td>
-											<td>{{user.fullName}}</td>
-											<td>{{user.team}}</td>
+										<tr  ng-repeat="user in users" ng-click="manageUser();">
+											<td>{{user.userId}}</td>
+											<td>{{user.userName}}</td>
+											<td>{{user.module}}</td>
 											<td>{{user.role}}</td>
 										</tr>
-										<!-- <tr>
-											<td>User Image</td>
-											<td>John Doe</td>
-											<td>User Management</td>
-											<td>Developer</td>
-										</tr>
-										<tr>
-											<td>User Image</td>
-											<td>Jane Doe</td>
-											<td>Data Management</td>
-											<td>Team Lead</td>
-										</tr>
-										<tr>
-											<td>User Image</td>
-											<td>George</td>
-											<td>User Management</td>
-											<td>Tester</td>
-										</tr>
-										<tr>
-											<td>User Image</td>
-											<td>Bill</td>
-											<td>Data Management</td>
-											<td>Developer</td>
-										</tr>
-										<tr>
-											<td>User Image</td>
-											<td>Jack Reacher</td>
-											<td>User Management</td>
-											<td>Team Lead</td>
-										</tr> -->
 									</tbody>
 									<tfoot>
 										<tr>
-											<th></th>
+											<th>User Id</th>
 											<th>Full Name</th>
 											<th>Team</th>
 											<th>Role</th>
@@ -110,6 +76,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					</div>
 				</div>
 			</section>
+			
+			<div style="display:none">
+			<form id="selectUserForm" action="ManageUserController" method="post">
+			<input type="hidden" name="user" />
+			<input type="submit">
+			</form>
+			</div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -147,6 +120,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       "autoWidth": false
     });
   });
+</script>
+<script>
+var usersFromDB = '${listOfUsers}';
+
 </script>
 </body>
 </html>

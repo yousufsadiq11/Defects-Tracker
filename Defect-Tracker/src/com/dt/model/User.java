@@ -8,7 +8,8 @@ package com.dt.model;
  *
  */
 public class User {
-
+	
+	private int userId;
 	private String userName;
 	private String email;
 	private String role;
@@ -75,6 +76,19 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	/**
+	 * @return the userId
+	 */
+	public int getUserId() {
+		return userId;
+	}
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 	
 
 }

@@ -29,28 +29,26 @@ public class UserListDAO implements IUserListDAO {
 	@Override
 	public ArrayList<User> getUserList() {
 		
-		//TODO have to test the getConnection function
 		ArrayList<User> listOfUsers = new ArrayList<User>();
-		Connection con= DBUtility.getConnection();
+		
 		try {
+			Connection con = DBUtility.getConnection();
 			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_USER_LIST);
 			ResultSet resultSet = stmt.executeQuery();
 			while(resultSet.next()){
 				User user = new User();
+				user.setUserId(resultSet.getInt("user_id"));
 				user.setUserName(resultSet.getString("user_name"));
 				user.setEmail(resultSet.getString("email"));
 				user.setRole(resultSet.getString("role"));
 				user.setModule(resultSet.getString("module"));
 				listOfUsers.add(user);
 			}
+			DBUtility.closeConnection(con);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
 		}
-		
 		return listOfUsers;
 	}
-
-	
 	
 }

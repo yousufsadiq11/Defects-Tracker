@@ -1,4 +1,4 @@
-package com.dt.assignRole;
+package com.dt.manageUser;
 
 import java.io.IOException;
 
@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AssignRoleController
+ * Servlet implementation class UpdateUserController
  */
-public class AssignRoleController extends HttpServlet {
+public class UpdateUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AssignRoleController() {
+    public UpdateUserController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,16 +26,18 @@ public class AssignRoleController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		doPost(request, response);
+		doPost(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("userList.jsp");
+		String user = request.getParameter("user");
+		IManageUserBiz manageUserBiz = new ManageUserBiz();
+		String responseMessage = manageUserBiz.updateUserDetails(user);
+		RequestDispatcher rd = request.getRequestDispatcher("UserListController");
+		request.setAttribute("message", responseMessage);
 		rd.forward(request, response);
 	}
 
