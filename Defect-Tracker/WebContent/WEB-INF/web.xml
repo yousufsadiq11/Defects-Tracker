@@ -19,7 +19,6 @@
     <servlet-name>AssignRoleController</servlet-name>
     <url-pattern>/AssignRoleController</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>UserListController</display-name>
@@ -29,5 +28,35 @@
   <servlet-mapping>
     <servlet-name>UserListController</servlet-name>
     <url-pattern>/UserListController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageUserController</display-name>
+    <servlet-name>ManageUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.ManageUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageUserController</servlet-name>
+    <url-pattern>/ManageUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateUserController</display-name>
+    <servlet-name>UpdateUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.UpdateUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUserController</servlet-name>
+    <url-pattern>/UpdateUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserController</display-name>
+    <servlet-name>DeleteUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.DeleteUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserController</servlet-name>
+    <url-pattern>/DeleteUserController</url-pattern>
   </servlet-mapping>
 </web-app>

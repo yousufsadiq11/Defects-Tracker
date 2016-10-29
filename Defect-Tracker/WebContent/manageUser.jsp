@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
+<html ng-app='defect-tracker'>
 <head>
  
   <title>Defect Tacker | Dashboard</title>
@@ -29,16 +29,58 @@ scratch. This page gets rid of all links and provides the needed markup only.
         Manage User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> All Users</a></li>
+        <li class="active">Manage User</li>
       </ol>
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" ng-controller="userDataController">
 
-      <!-- Your Page Content Here -->
+      <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">User Profile</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form">
+                <!-- text input -->
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" class="form-control" placeholder="Full Name" ng-model="user.userName" disabled>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" placeholder="Email" ng-model="user.email" disabled>
+                </div>
 
+
+                <!-- select -->
+                <div class="form-group">
+                  <label>User Module</label>
+                  <select class="form-control"  ng-model="userModule" ng-options = "module.moduleName for module in listOfModules"></select>
+                </div>
+                
+                <div class="form-group">
+                  <label>User Role</label>
+                  <select class="form-control"  ng-model="userRole" ng-options = "role.roleName for role in listOfRoles"></select>
+                </div>
+                <div class="form-group col-md-6">
+                <button type="button" class="btn btn-block btn-primary btn-lg" ng-click="updateDetails()">Update Details</button>
+                </div>
+                <div class="form-group col-md-6">
+                <button type="button" class="btn btn-block btn-danger btn-lg" ng-click="removeUser()">Remove User</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+			<div style="display:none">
+			<form id="userForm" action="" method="post">
+			<input type="hidden" name="user" />
+			<input type="submit">
+			</form>
+			</div>
     </section>
     <!-- /.content -->
   </div>
@@ -62,5 +104,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED JS SCRIPTS -->
 <jsp:include page="page/include/script-library.jsp"></jsp:include>
+<script src="js/admin/manageUser.js"></script>
+<script>
+var selectedUser = '${selectedUser}';
+var listOfModules = '${listOfModules}';
+var listOfRoles = '${listOfRoles}';
+</script>
 </body>
 </html>

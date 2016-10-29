@@ -22,15 +22,20 @@ public class DBUtility {
 
 	
 	public static Connection getConnection() {
+		Connection con=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/defect_tracker", "root",
-					"password");
-			return con;
-		} catch (Exception e) {
-			System.err.println("ERROR : Cannot create a connection");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-		return null;
+		try {
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/defect_tracker?autoReconnect=true&useSSL=false","root","password");
+		} catch (SQLException e) {
+			System.err.println("ERROR : Cannot create the connection.");
+			System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
+		}
+		return con;
 	}  
 	
 	
@@ -39,6 +44,7 @@ public class DBUtility {
 			con.close();
 		} catch (SQLException e) {
 			System.err.println("ERROR : Cannot close the connection.");
+			System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
 		}
 	}
 }
