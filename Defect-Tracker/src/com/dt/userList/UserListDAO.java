@@ -50,5 +50,27 @@ public class UserListDAO implements IUserListDAO {
 		}
 		return listOfUsers;
 	}
+
+	@Override
+	public User getUserDetails(User user) {
+		try {
+			Connection con = DBUtility.getConnection();
+			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_USER_DETAILS);
+			stmt.setString(1, user.getEmail());
+			ResultSet resultSet = stmt.executeQuery();
+			while(resultSet.next()){
+				
+				user.setUserId(resultSet.getInt("user_id"));
+				user.setUserName(resultSet.getString("user_name"));
+				user.setEmail(resultSet.getString("email"));
+				user.setRole(resultSet.getString("role"));
+				user.setModule(resultSet.getString("module"));
+			}
+			DBUtility.closeConnection(con);
+		} catch (SQLException e) {
+			System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
+		}
+		return user;
+	}
 	
 }

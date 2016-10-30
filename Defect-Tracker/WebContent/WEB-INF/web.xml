@@ -2,22 +2,25 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>Defect-Tracker</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>RedirectController</welcome-file>
   </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+  <exception-type>Exception</exception-type>
+  <location>/errorPage.jsp</location>
+  </error-page>
   <servlet>
     <description></description>
-    <display-name>AssignRoleController</display-name>
-    <servlet-name>AssignRoleController</servlet-name>
-    <servlet-class>com.dt.assignRole.AssignRoleController</servlet-class>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.dt.login.LoginController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AssignRoleController</servlet-name>
-    <url-pattern>/AssignRoleController</url-pattern>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -58,5 +61,15 @@
   <servlet-mapping>
     <servlet-name>DeleteUserController</servlet-name>
     <url-pattern>/DeleteUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RedirectController</display-name>
+    <servlet-name>RedirectController</servlet-name>
+    <servlet-class>com.dt.utility.RedirectController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectController</servlet-name>
+    <url-pattern>/RedirectController</url-pattern>
   </servlet-mapping>
 </web-app>

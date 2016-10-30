@@ -83,5 +83,6 @@ desired effect
 
 <!-- REQUIRED JS SCRIPTS -->
 <jsp:include page="page/include/script-library.jsp"></jsp:include>
+<script src="js/pages/dashboard.js"></script>
 </body>
 </html>

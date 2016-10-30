@@ -14,5 +14,6 @@ import com.dt.model.User;
 public interface IUserListDAO {
 
 	ArrayList<User> getUserList();
+	User getUserDetails(User user);
 
 }

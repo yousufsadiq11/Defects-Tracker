@@ -9,6 +9,7 @@ import java.util.List;
 import com.dt.model.User;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 /**
@@ -38,6 +39,13 @@ public class UserListBiz implements IUserListBiz{
 	            }.getType());
 		
 		return jsonArray.toString();
+	}
+
+	@Override
+	public String getUserDetails(User user) {
+		IUserListDAO userListDAO = new UserListDAO();
+		user = userListDAO.getUserDetails(user);
+		return new Gson().toJson(user, new TypeToken<User>(){}.getType());
 	}
 
 }
