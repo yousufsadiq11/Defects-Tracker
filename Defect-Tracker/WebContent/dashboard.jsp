@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
  
-  <title>Defect Tacker | Dashboard</title>
+  <title>Defect Tracker | Dashboard</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
 </head>
 <!--
