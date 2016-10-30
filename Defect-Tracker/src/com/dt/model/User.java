@@ -14,6 +14,7 @@ public class User {
 	private String role;
 	private String module;
 	private String password;
+	public boolean valid;
 	
 	/**
 	 * @return the userName
@@ -74,6 +75,14 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean isValid()
+	{
+		return valid;
+	}
+	public void setValid(boolean newValid)
+	{
+		valid = newValid;
 	}
 	
 

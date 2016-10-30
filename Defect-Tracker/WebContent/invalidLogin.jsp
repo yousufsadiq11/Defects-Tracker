@@ -14,7 +14,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg"><font color=red>Invalid Entry!! Sign in to start your session</font></p>
 
     <form action="LoginController" method="post">
       <div class="form-group has-feedback">
