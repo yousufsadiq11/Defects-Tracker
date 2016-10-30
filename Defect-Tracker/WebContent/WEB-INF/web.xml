@@ -21,12 +21,42 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>FrontController</display-name>
-    <servlet-name>FrontController</servlet-name>
-    <servlet-class>com.dt.utility.FrontController</servlet-class>
+    <display-name>UserListController</display-name>
+    <servlet-name>UserListController</servlet-name>
+    <servlet-class>com.dt.userList.UserListController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>FrontController</servlet-name>
-    <url-pattern>/FrontController</url-pattern>
+    <servlet-name>UserListController</servlet-name>
+    <url-pattern>/UserListController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageUserController</display-name>
+    <servlet-name>ManageUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.ManageUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageUserController</servlet-name>
+    <url-pattern>/ManageUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateUserController</display-name>
+    <servlet-name>UpdateUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.UpdateUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUserController</servlet-name>
+    <url-pattern>/UpdateUserController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserController</display-name>
+    <servlet-name>DeleteUserController</servlet-name>
+    <servlet-class>com.dt.manageUser.DeleteUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserController</servlet-name>
+    <url-pattern>/DeleteUserController</url-pattern>
   </servlet-mapping>
 </web-app>

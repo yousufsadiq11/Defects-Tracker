@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -6,12 +7,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html ng-app>
 <head>
  
+  <title>Defect Tracker | Dashboard</title>
+=======
+<html ng-app='defect-tracker'>
+<head>
+ 
   <title>Defect Tacker | Dashboard</title>
+>>>>>>> origin/master
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
  <!-- DataTables -->
   <link rel="stylesheet" href="lib/plugins/datatables/dataTables.bootstrap.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -36,7 +47,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="active">All Users</li>
       </ol>
     </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     <!-- Main content -->
     <section class="content" ng-controller="userListController">
 				<!-- Your Page Content Here -->
@@ -44,20 +58,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
+<<<<<<< HEAD
 								<h3 class="box-title">Data Table With Full Features</h3>
+=======
+								<h3 class="box-title">${message}</h3>
+>>>>>>> origin/master
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
 										<tr>
+<<<<<<< HEAD
 											<th></th>
+=======
+											<th>User Id</th>
+>>>>>>> origin/master
 											<th>Full Name</th>
 											<th>Team</th>
 											<th>Role</th>
 										</tr>
 									</thead>
 									<tbody>
+<<<<<<< HEAD
 										<tr  ng-repeat="user in users">
 											<td>{{user.img}}</td>
 											<td>{{user.fullName}}</td>
@@ -98,6 +121,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									<tfoot>
 										<tr>
 											<th></th>
+=======
+										<tr  ng-repeat="user in users" ng-click="manageUser();">
+											<td>{{user.userId}}</td>
+											<td>{{user.userName}}</td>
+											<td>{{user.module}}</td>
+											<td>{{user.role}}</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>User Id</th>
+>>>>>>> origin/master
 											<th>Full Name</th>
 											<th>Team</th>
 											<th>Role</th>
@@ -110,6 +145,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					</div>
 				</div>
 			</section>
+<<<<<<< HEAD
+=======
+			
+			<div style="display:none">
+			<form id="selectUserForm" action="ManageUserController" method="post">
+			<input type="hidden" name="user" />
+			<input type="submit">
+			</form>
+			</div>
+>>>>>>> origin/master
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -148,5 +193,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   });
 </script>
+<<<<<<< HEAD
+=======
+<script>
+var usersFromDB = '${listOfUsers}';
+
+</script>
+>>>>>>> origin/master
 </body>
 </html>

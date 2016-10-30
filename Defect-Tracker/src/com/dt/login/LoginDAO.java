@@ -18,7 +18,7 @@ public class LoginDAO
 		String searchQuery = "select * from User where username="+username+"AND password="+password+"";
 		try
 		{
-			currentCon= ConnectionManager.getConnection();
+			currentCon= Connection.getConnection();
 			stmt=currentCon.createStatement();
 			rs=stmt.executeQuery(searchQuery);
 			boolean more=rs.next();

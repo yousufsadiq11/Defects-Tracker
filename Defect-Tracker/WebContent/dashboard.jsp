@@ -3,10 +3,10 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
+<html ng-app='defect-tracker'>
 <head>
  
-  <title>Defect Tacker | Dashboard</title>
+  <title>Defect Tracker | Dashboard</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
 </head>
 <!--

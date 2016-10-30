@@ -1,40 +1,19 @@
-userListController= function($scope){
+var admin = angular.module('defect-tracker',[]);
 
-$scope.users =  [ {
-		"img" : "User Image",
-		"fullName" : "John Doe",
-		"team" : "User Management",
-		"role" : "Developer"},
-		{
-			"img" : "User Image",
-			"fullName" : "Jane Doe",
-			"team" : "User Management",
-			"role" : "Team Lead"
-		},
-		{
-			"img" : "User Image",
-			"fullName" : "Bill",
-			"team" : "User Management",
-			"role" : "Tester"
-		},
-		{
-			"img" : "User Image",
-			"fullName" : "George",
-			"team" : "Data Management",
-			"role" : "Developer"
-		},
-		{
-			"img" : "User Image",
-			"fullName" : "Jack Reacher",
-			"team" : "Data Management",
-			"role" : "Developer"
-		},
-		{
-			"img" : "User Image",
-			"fullName" : "Josh Randor",
-			"team" : "Data Management",
-			"role" : "Team Lead"
-		}
-	];
 
+admin.factory('UserListService', function() {
+    return {
+        users : $.parseJSON(usersFromDB) //usersFromDB is set in the jsp <script> tag
+    };
+});
+
+function userListController($scope,UserListService){
+	$scope.users = UserListService.users;	
+
+
+$scope.manageUser = function(){
+	
+	$("input[name='user']").val(JSON.stringify(this.user));
+	$("#selectUserForm").submit();
+};
 };
