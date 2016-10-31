@@ -26,7 +26,10 @@ public class SQLConstants {
 	public static final String UPDATE_USER_DETAILS = "UPDATE USER SET USER_NAME = ?, EMAIL = ?,ROLE_ID = (SELECT R.ROLE_ID FROM ROLE R WHERE R.ROLE_NAME = ?),MODULE_ID = (SELECT M.MODULE_ID FROM MODULE M WHERE M.MODULE_NAME = ?) WHERE USER_ID = ?";
 	public static final String REMOVE_USER = "DELETE FROM USER WHERE USER_ID = ?";
 	public static final String GET_USER_DETAILS = "SELECT U.USER_ID,U.USER_NAME,U.EMAIL,(SELECT ROLE_NAME FROM ROLE WHERE ROLE_ID = U.ROLE_ID) ROLE,(SELECT MODULE_NAME FROM MODULE WHERE MODULE_ID = U.MODULE_ID) MODULE FROM USER U WHERE U.EMAIL=?";
-	
+	public static final String MAX_DEFECT_ID="select max(defect_id) from defect";
+	public static final String MODULE_ID="select module_id from module";
+	public static final String ROLE_NAME="select role_name from role";
+	public static final String ADD_DEFECT="insert into defect values(?,?,?,?,?,?,?,?,?)";
 	
 	
 

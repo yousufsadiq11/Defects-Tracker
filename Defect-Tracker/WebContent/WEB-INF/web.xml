@@ -72,4 +72,14 @@
     <servlet-name>RedirectController</servlet-name>
     <url-pattern>/RedirectController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddDefectController</display-name>
+    <servlet-name>AddDefectController</servlet-name>
+    <servlet-class>com.dt.addDefect.AddDefectController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDefectController</servlet-name>
+    <url-pattern>/AddDefectController</url-pattern>
+  </servlet-mapping>
 </web-app>
