@@ -1,8 +1,6 @@
 package com.dt.model;
 
-import java.sql.Date;
-
-public class AddDefect {
+public class Defect {
 	int defect_id;
 	String defect_name;
 	String defect_desc;

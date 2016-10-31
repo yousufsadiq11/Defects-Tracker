@@ -2,14 +2,14 @@ package com.dt.addDefect;
 
 import java.sql.*;
 
-import com.dt.model.AddDefect;
+import com.dt.model.Defect;
 import com.dt.utility.DBUtility;
 import com.dt.utility.SQLConstants;
 
 public class AddDefectDao {
 
 	
-	public int addDefect(AddDefect dao) {
+	public int addDefect(Defect dao) {
 		// TODO Auto-generated method stub
 		int max_id=0,x=0;
 		Connection conn=DBUtility.getConnection();

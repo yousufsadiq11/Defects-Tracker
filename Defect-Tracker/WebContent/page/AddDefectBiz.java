@@ -6,11 +6,11 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.dt.model.Defect;
+import com.dt.model.AddDefect;
 
 public class AddDefectBiz {
  public int AddDefect(HttpServletRequest request){
-	 Defect obj=new Defect();
+	 AddDefect obj=new AddDefect();
 	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:MM");
 	 Date date = new Date();
 	 obj.setAssigned_date(dateFormat.format(date));
