@@ -1,5 +1,4 @@
 package com.dt.addUser;
-import com.dt.utility.SendMail;
 
 /**
  * @author Anurag
@@ -44,12 +43,8 @@ public class AddUserController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		AddUserBiz obj=new AddUserBiz();
 		int flag=obj.AddUser(request);
-		SendMail mail = new SendMail();
 		if(flag==1){
-			
-			out.println("User successfully added in the system and notification has been sent to regsitered email id.");
-			mail.sendMail();
-		
+		out.println("User successfully added in the system and notification has been sent to regsitered email id.");
 		}
 		else
 		{
@@ -57,8 +52,7 @@ public class AddUserController extends HttpServlet {
 		}
 		
 		doGet(request, response);
-        
-
+	
 	}
 
 

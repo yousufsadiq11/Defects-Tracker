@@ -19,9 +19,12 @@ public class AddUserDAO {
 		try{
 			
 		PreparedStatement pst = conn.prepareStatement(SQLConstants.ADD_USER);
+		PreparedStatement pst1 = conn.prepareStatement(SQLConstants.INSERT_USER);
 		pst.setString(1, dao.getEmail());
-		
+		pst.setString(2, dao.getPassword());
+		pst1.setString(1, dao.getEmail());
 		x = pst.executeUpdate();
+		pst1.executeUpdate();
 		DBUtility.closeConnection(conn);
 
 		}
