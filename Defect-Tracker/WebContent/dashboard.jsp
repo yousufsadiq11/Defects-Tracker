@@ -29,7 +29,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-controller="userController">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -47,12 +47,12 @@ desired effect
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Optional description</small>
+        <small></small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+     <!--  <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Here</li>
-      </ol>
+      </ol> -->
     </section>
 
     <!-- Main content -->
@@ -83,6 +83,9 @@ desired effect
 
 <!-- REQUIRED JS SCRIPTS -->
 <jsp:include page="page/include/script-library.jsp"></jsp:include>
+<script>
+var userJson = '${userJson}';
+</script>
 <script src="js/pages/dashboard.js"></script>
 </body>
 </html>

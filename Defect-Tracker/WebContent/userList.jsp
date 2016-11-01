@@ -29,7 +29,7 @@
         <small>All the registered users on the system</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="RedirectController?destination=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">All Users</li>
       </ol>
     </section>
