@@ -9,8 +9,12 @@
     <location>/errorPage.jsp</location>
   </error-page>
   <error-page>
-  <exception-type>Exception</exception-type>
-  <location>/errorPage.jsp</location>
+    <error-code>500</error-code>
+    <location>/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>Exception</exception-type>
+    <location>/errorPage.jsp</location>
   </error-page>
   <servlet>
     <description></description>
@@ -81,5 +85,15 @@
   <servlet-mapping>
     <servlet-name>AddDefectController</servlet-name>
     <url-pattern>/AddDefectController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutController</display-name>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>com.dt.login.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
 </web-app>

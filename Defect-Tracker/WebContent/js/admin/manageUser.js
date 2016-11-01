@@ -41,6 +41,9 @@ function userDataController($scope,UserDataService){
 		$("#userForm").attr("action","UpdateUserController").submit();
 	};
 	
+	$scope.confirmDelete = function(){
+		$('#confirm-dialog').modal('toggle');
+	}
 	$scope.removeUser = function(){
 		$("input[name='user']").val(JSON.stringify($scope.user));
 		$("#userForm").attr("action","DeleteUserController").submit();

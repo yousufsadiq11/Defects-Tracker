@@ -69,11 +69,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <button type="button" class="btn btn-block btn-primary btn-lg" ng-click="updateDetails()">Update Details</button>
                 </div>
                 <div class="form-group col-md-6">
-                <button type="button" class="btn btn-block btn-danger btn-lg" ng-click="removeUser()">Remove User</button>
+                <button type="button" class="btn btn-block btn-danger btn-lg" ng-click="confirmDelete()">Remove User</button>
                 </div>
               </form>
             </div>
             <!-- /.box-body -->
+             <div id="confirm-dialog" class="modal fade modal-danger" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Alert</h4>
+              </div>
+              <div class="modal-body">
+                <p>Do you really want to remove the user? This action cannot be reversed.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-outline" ng-click="removeUser()">Proceed</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
           </div>
 			<div style="display:none">
 			<form id="userForm" action="" method="post">
