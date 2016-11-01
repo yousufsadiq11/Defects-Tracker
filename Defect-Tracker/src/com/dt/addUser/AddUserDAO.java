@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import com.dt.model.User;
-import com.dt.utility.DBUtility;
-import com.dt.utility.SQLConstants;
+import com.dt.utility.*;
 
 /**
  * @author Anurag
@@ -16,6 +15,7 @@ public class AddUserDAO {
 		// TODO Auto-generated method stub
 		int x=0;
 		Connection conn=DBUtility.getConnection();
+
 		try{
 			
 		PreparedStatement pst = conn.prepareStatement(SQLConstants.ADD_USER);

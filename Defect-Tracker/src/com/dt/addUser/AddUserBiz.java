@@ -14,7 +14,10 @@ public class AddUserBiz {
 		 obj.setPassword("abcd");
 		 AddUserDAO dao=new AddUserDAO();
 		 int flag=dao.addUser(obj);
-		 mail.sendMail(request.getParameter("email"));
+		 if(flag==1)
+		 {
+	     mail.sendMail(request.getParameter("email"));
+		 }
 		 return flag;
 	 }
 }

@@ -50,6 +50,7 @@ public class AddUserController extends HttpServlet {
 		else
 		{
 			out.println("User Already Exist");
+			out.println("<a href=RedirectController?destination=dashboard&type=PAGE>Go Back to Dashboard</a>");
 		}
 		
 	//	doGet(request, response);
