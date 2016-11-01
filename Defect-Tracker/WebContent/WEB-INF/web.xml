@@ -96,4 +96,14 @@
     <servlet-name>LogoutController</servlet-name>
     <url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddUserController</display-name>
+    <servlet-name>AddUserController</servlet-name>
+    <servlet-class>com.dt.addUser.AddUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserController</servlet-name>
+    <url-pattern>/AddUserController</url-pattern>
+  </servlet-mapping>
 </web-app>
