@@ -1,4 +1,5 @@
 package com.dt.addUser;
+import com.dt.utility.SendMail;
 
 /**
  * @author Anurag
@@ -31,8 +32,8 @@ public class AddUserController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		doPost(request, response);
+	//	response.getWriter().append("Served at: ").append(request.getContextPath());
+	//	doPost(request, response);
 	}
 
 	/**
@@ -43,13 +44,21 @@ public class AddUserController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		AddUserBiz obj=new AddUserBiz();
 		int flag=obj.AddUser(request);
+		SendMail mail = new SendMail();
 		if(flag==1){
 			
-			out.println("User Already Exists");
-		   
+			out.println("User successfully added in the system and notification has been sent to regsitered email id.");
+			mail.sendMail();
+		
+		}
+		else
+		{
+			out.println("User Already Exist");
 		}
 		
 		doGet(request, response);
+        
+
 	}
 
 
