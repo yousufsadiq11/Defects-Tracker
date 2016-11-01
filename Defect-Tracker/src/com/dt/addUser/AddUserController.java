@@ -31,8 +31,8 @@ public class AddUserController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	response.getWriter().append("Served at: ").append(request.getContextPath());
-	//	doPost(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -45,13 +45,14 @@ public class AddUserController extends HttpServlet {
 		int flag=obj.AddUser(request);
 		if(flag==1){
 		out.println("User successfully added in the system and notification has been sent to regsitered email id.");
+		out.println("<a href=RedirectController?destination=dashboard&type=PAGE>Go Back to Dashboard</a>");
 		}
 		else
 		{
 			out.println("User Already Exist");
 		}
 		
-		doGet(request, response);
+	//	doGet(request, response);
 	
 	}
 
