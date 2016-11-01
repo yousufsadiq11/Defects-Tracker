@@ -11,10 +11,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
+
 public class SendMail {
 
     public void sendMail(String email) {
-
         final String username = "defect.tracker.app@gmail.com";
         final String password = "ssdi2016";
 
@@ -36,14 +36,13 @@ public class SendMail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("defect.tracker.app@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                InternetAddress.parse(email));
+            InternetAddress.parse(email));
             message.setSubject("Welcome To Defect Tracker");
             message.setText("Dear User,"
                 + "\n\n Please login to defect tracker application with your email using below password"
             	+ "\n\n Password: abcd"	);
 
             Transport.send(message);
-
             System.out.println("Done");
 
         } catch (MessagingException e) {
