@@ -15,7 +15,7 @@ public class SendMail {
 
     public void sendMail(String email) {
 
-        final String username = "defect_tracker.app@gmail.com";
+        final String username = "defect.tracker.app@gmail.com";
         final String password = "ssdi2016";
 
         Properties props = new Properties();
@@ -34,7 +34,7 @@ public class SendMail {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("defect_tracker.app@gmail.com"));
+            message.setFrom(new InternetAddress("defect.tracker.app@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
                 InternetAddress.parse(email));
             message.setSubject("Welcome To Defect Tracker");

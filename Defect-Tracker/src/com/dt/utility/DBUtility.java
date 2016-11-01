@@ -31,7 +31,7 @@ public class DBUtility {
 			e1.printStackTrace();
 		}
 		try {
-			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/defect_tracker?autoReconnect=true&useSSL=false","root","password");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:8080/defect_tracker","root","anurag9657");
 		} catch (SQLException e) {
 			System.err.println("ERROR : Cannot create the connection.");
 			System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
