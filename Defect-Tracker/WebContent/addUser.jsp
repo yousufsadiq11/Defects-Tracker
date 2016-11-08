@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html ng-app>
+<html ng-app="defect-tracker">
 <head>
  
   <title>Defect Tracker | Dashboard</title>
@@ -29,27 +29,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
         Add New User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Add New User</li>
       </ol>
     </section>
 
     <!-- Main content -->
-    <section class="content" ng-controller="userListController">
+    <section class="content">
 				<!-- Your Page Content Here -->
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="add-user-box">
   <div class="login-box-body">
 
-    <form method="post">
+    <form method="post" action="AddUserController">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" class="form-control" placeholder="Email"
+        name="email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
             <div class="row">
       <div class="col-xs-4">
-          <button type="submit" onclick="greeting()" class="btn btn-primary btn-block btn-flat">Add</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Add</button>
         </div>
         </div>
               </form>

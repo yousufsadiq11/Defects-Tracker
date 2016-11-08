@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         Manage User
       </h1>
       <ol class="breadcrumb">
-      	<li><a href="RedirectController?destination=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      	<li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li><a href="UserListController"><i class="fa fa-users"></i> All Users</a></li>
         <li class="active">Manage User</li>
       </ol>

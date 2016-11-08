@@ -14,7 +14,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">${message}</p>
+    <p class="login-box-msg text-bold text-maroon">${message}</p>
 
     <form action="LoginController" method="post">
       <div class="form-group has-feedback">

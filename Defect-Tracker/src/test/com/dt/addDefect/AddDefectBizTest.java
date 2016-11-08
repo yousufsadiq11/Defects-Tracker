@@ -1,4 +1,4 @@
-package com.dt.addDefect;
+package test.com.dt.addDefect;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AddDefectDaoTest {
+public class AddDefectBizTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

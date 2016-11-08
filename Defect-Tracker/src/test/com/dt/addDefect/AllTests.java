@@ -1,4 +1,4 @@
-package com.dt.addDefect;
+package test.com.dt.addDefect;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

@@ -3,11 +3,12 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html ng-app='defect-tracker'>
+<html ng-app="defect-tracker">
 <head>
  
   <title>Defect Tracker | Dashboard</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
+ 
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -29,7 +30,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini" ng-controller="userController">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -59,7 +60,6 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
-
     </section>
     <!-- /.content -->
   </div>
@@ -81,11 +81,8 @@ desired effect
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED JS SCRIPTS -->
-<jsp:include page="page/include/script-library.jsp"></jsp:include>
-<script>
-var userJson = '${userJson}';
-</script>
+
+
 <script src="js/pages/dashboard.js"></script>
 </body>
 </html>

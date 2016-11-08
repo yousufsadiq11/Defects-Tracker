@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dt.model.User;
+import com.google.gson.Gson;
+
 /**
  * Servlet implementation class UpdateUserController
  */
@@ -36,7 +39,15 @@ public class UpdateUserController extends HttpServlet {
 		String user = request.getParameter("user");
 		IManageUserBiz manageUserBiz = new ManageUserBiz();
 		String responseMessage = manageUserBiz.updateUserDetails(user);
-		RequestDispatcher rd = request.getRequestDispatcher("UserListController");
+		User obj = new User();
+		Gson gson = new Gson(); 
+		obj = gson.fromJson(user,User.class);
+		RequestDispatcher rd = null;
+		if(obj.getRole().equals("ADMIN")){
+		rd = request.getRequestDispatcher("UserListController");
+		}else{
+		rd = request.getRequestDispatcher("RedirectController?url=userProfileController&type=CONTROLLER");
+		}
 		request.setAttribute("message", responseMessage);
 		rd.forward(request, response);
 	}

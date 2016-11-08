@@ -9,10 +9,10 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html ng-app="defect-tracker">
+<html>
 <head>
 
-<title>Defect Tacker | Add Defect</title>
+<title>Defect Tacker | Update Defect</title>
 <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
 <!-- iCheck -->
   <link rel="stylesheet" href="lib/plugins/iCheck/square/blue.css">
@@ -33,10 +33,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
-				<h1>Add Defect</h1>
+				<h1>Update Defect</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-					<li class="active">Add Defect</li>
+					<li class="active">Update Defect</li>
 				</ol>
 			</section>
 
@@ -46,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="box box-warning">
 					<!-- /.box-header -->
 					<div class="box-body">
-						<form role="form" method="post" action="AddDefectController">
+						<form role="form" method="post" action="UpdateDefectController">
 							<!-- text input -->
 							<div class="form-group col-md-12">
 								<label>Defect Name</label> <input type="text"

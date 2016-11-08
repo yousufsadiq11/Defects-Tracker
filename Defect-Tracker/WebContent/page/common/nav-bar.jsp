@@ -1,3 +1,12 @@
+<%session=request.getSession();
+	if(session.getAttribute("userJson")==null){%>
+	<script language="JavaScript">
+document.location="RedirectController?url=index&type=PAGE";//redirect to home page decider
+</script>
+		<%}		 %>
+<script>
+var userJson = '${userJson}';
+</script>
     <!-- Logo -->
     <a href="dashboard.jsp" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -7,13 +16,13 @@
     </a>
 
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
+    <nav class="navbar navbar-static-top" role="navigation" ng-app="nav-bar">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
+      <div class="navbar-custom-menu" ng-controller="userController">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <!-- <li class="dropdown messages-menu">
@@ -117,7 +126,7 @@
               <!-- The user image in the navbar-->
               <img src="img/avatar5.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs"></span>
+              <span class="hidden-xs">{{user.userName}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -125,7 +134,7 @@
                 <img src="img/avatar5.png" class="img-circle" alt="User Image">
 
                 <p>
-                  <!-- {{user.userName}} -->
+                  {{user.userName}}
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
               </li>
@@ -162,4 +171,17 @@
         </ul>
       </div>
     </nav>
+  <script>
+ var defectTracker = angular.module('defect-tracker',[]);
+
+ defectTracker.factory('UserService', function() {
+      return {
+          user : $.parseJSON(userJson) //usersFromDB is set in the jsp <script> tag
+      };
+  });
+
+  function userController($scope,UserService){
+  	$scope.user = UserService.user;	
+  };
   
+  </script>

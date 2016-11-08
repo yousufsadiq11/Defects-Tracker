@@ -1,5 +1,4 @@
-var admin = angular.module('defect-tracker',[]);
-admin.factory('UserDataService', function() {
+defectTracker.factory('UserDataService', function() {
     return {
         userData : $.parseJSON(selectedUser), 
         listOfModules : $.parseJSON(listOfModules),

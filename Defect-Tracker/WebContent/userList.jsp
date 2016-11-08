@@ -29,7 +29,7 @@
         <small>All the registered users on the system</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="RedirectController?destination=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">All Users</li>
       </ol>
     </section>
@@ -38,10 +38,13 @@
 				<!-- Your Page Content Here -->
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="box">
-							<div class="box-header">
-								<h3 class="box-title">${message}</h3>
+					<%if(request.getAttribute("message")!=null){ %>
+					<div class="callout callout-info">
+							<h4>Ding!</h4>
+								<p>${message}</p>
 							</div>
+							<%} %>
+						<div class="box">
 							<!-- /.box-header -->
 							<div class="box-body">
 								<table id="example1" class="table table-bordered table-striped">
@@ -104,7 +107,7 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-<jsp:include page="page/include/script-library.jsp"></jsp:include>
+<%-- <jsp:include page="page/include/script-library.jsp"></jsp:include> --%>
 <script src="lib/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/admin/userList.js"></script>

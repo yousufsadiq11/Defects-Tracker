@@ -30,7 +30,8 @@ public class SQLConstants {
 	public static final String MODULE_ID="select module_id from module";
 	public static final String ROLE_NAME="select role_name from role";
 	public static final String ADD_DEFECT="insert into defect values(?,?,?,?,?,?,?,?,?)";
-	
+	public static final String ADD_USER="INSERT INTO LOGIN(login_id,password) VALUES(?,?)";
+	public static final String INSERT_USER="INSERT INTO USER(EMAIL) VALUES(?)";
 	
 
 }

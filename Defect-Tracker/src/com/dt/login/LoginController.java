@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 	    RequestDispatcher rd = null;
 		if(loginBiz.isValidLogin(user))
 	    {
-			rd = request.getRequestDispatcher("RedirectController?destination=dashboard&type="+SQLConstants.TYPE_PAGE);
+			rd = request.getRequestDispatcher("RedirectController?url=dashboard&type="+SQLConstants.TYPE_PAGE);
 			HttpSession session = request.getSession();
 			IUserListBiz userListBiz = new UserListBiz();
 			String userJson = userListBiz.getUserDetails(user);
@@ -58,7 +58,7 @@ public class LoginController extends HttpServlet {
 	    else
 	    {
 	    	
-	    	rd = request.getRequestDispatcher("RedirectController?destination=index&type="+SQLConstants.TYPE_PAGE);
+	    	rd = request.getRequestDispatcher("RedirectController?url=index&type="+SQLConstants.TYPE_PAGE);
 	    	request.setAttribute("message", "Invalid Login. Please try again");
 	    }
 		request.setAttribute("user", user);
