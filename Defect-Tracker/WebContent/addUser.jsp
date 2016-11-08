@@ -3,7 +3,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html ng-app>
+<html ng-app="defect-tracker">
 <head>
  
   <title>Defect Tracker | Dashboard</title>
@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         Add New User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Add New User</li>
       </ol>
     </section>
@@ -50,10 +50,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
             <div class="row">
       <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="updateDetails()">Add</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Add</button>
         </div>
         </div>
-        
               </form>
         
   </div>  <!-- login-box-body-end -->

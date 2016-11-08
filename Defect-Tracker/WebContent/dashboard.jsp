@@ -3,11 +3,12 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html ng-app='defect-tracker'>
+<html ng-app="defect-tracker">
 <head>
  
   <title>Defect Tracker | Dashboard</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
+ 
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -47,19 +48,18 @@ desired effect
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Optional description</small>
+        <small></small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+     <!--  <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Here</li>
-      </ol>
+      </ol> -->
     </section>
 
     <!-- Main content -->
     <section class="content">
 
       <!-- Your Page Content Here -->
-
     </section>
     <!-- /.content -->
   </div>
@@ -81,8 +81,8 @@ desired effect
 </div>
 <!-- ./wrapper -->
 
-<!-- REQUIRED JS SCRIPTS -->
-<jsp:include page="page/include/script-library.jsp"></jsp:include>
+
+
 <script src="js/pages/dashboard.js"></script>
 </body>
 </html>

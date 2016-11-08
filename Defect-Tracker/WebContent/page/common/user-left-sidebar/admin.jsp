@@ -1,6 +1,6 @@
 <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="UserListController"><i class="fa fa-users"></i> <span>All Users</span></a></li>
-         <li class="active"><a href="AddUserController"><i class="fa fa-user-plus"></i> <span>Add User</span></a></li>
+        <li><a href="UserListController"><i class="fa fa-users"></i> <span>All Users</span></a></li>
+         <li><a href="RedirectController?url=addUser&type=PAGE"><i class="fa fa-user-plus"></i> <span>Add User</span></a></li>
         <!-- <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

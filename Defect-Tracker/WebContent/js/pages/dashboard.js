@@ -1,1 +1,0 @@
-var dashboard = angular.module('defect-tracker',[]);

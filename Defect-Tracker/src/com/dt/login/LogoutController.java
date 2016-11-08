@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dt.utility.SQLConstants;
-
 /**
  * Servlet implementation class LogoutController
  */
@@ -32,7 +30,7 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		RequestDispatcher rd = null;
-		rd = request.getRequestDispatcher("RedirectController?destination=index&type="+SQLConstants.TYPE_PAGE);
+		rd = request.getRequestDispatcher("index.jsp");
     	request.setAttribute("message", "Successfully logged out.");
     	rd.forward(request, response);
 	}

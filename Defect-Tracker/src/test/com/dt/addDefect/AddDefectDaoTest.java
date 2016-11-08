@@ -1,4 +1,4 @@
-package com.dt.manageUser;
+package test.com.dt.addDefect;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ManageUserBizTest {
+public class AddDefectDaoTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,12 +27,7 @@ public class ManageUserBizTest {
 	}
 
 	@Test
-	public final void testUpdateUserDetails() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testRemoveUser() {
+	public final void testAddDefect() {
 		fail("Not yet implemented"); // TODO
 	}
 

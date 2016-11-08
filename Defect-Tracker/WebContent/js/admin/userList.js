@@ -1,7 +1,4 @@
-var admin = angular.module('defect-tracker',[]);
-
-
-admin.factory('UserListService', function() {
+defectTracker.factory('UserListService', function() {
     return {
         users : $.parseJSON(usersFromDB) //usersFromDB is set in the jsp <script> tag
     };

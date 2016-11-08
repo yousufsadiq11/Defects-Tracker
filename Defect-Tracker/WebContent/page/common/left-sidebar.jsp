@@ -13,12 +13,13 @@
         </div>
       </form> -->
       <!-- /.search form -->
-
+		
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">Menu</li>
         <jsp:include page="user-left-sidebar/admin.jsp"></jsp:include>
         <jsp:include page="user-left-sidebar/tester.jsp"></jsp:include>
+        <li class="active"><a href="RedirectController?url=userProfileController&type=CONTROLLER"><i class="fa  fa-user"></i> <span>Update Profile</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
