@@ -48,20 +48,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<div class="box-body">
 						<form role="form" method="post" action="UpdateDefectController">
 							<!-- text input -->
-							<div class="form-group col-md-12">
-								<label>Defect Name</label> <input type="text"
-									class="form-control" placeholder="Defect Name"
-									name="defect_name" required>
+							<div class="form-group col-md-4">
+								<label>Defect ID</label> <input type="text"
+									class="form-control"  ng-model="defect.defect_id"
+									name="defect_id" disabled>
 							</div>
-							<div class="form-group col-md-12">
+								<div class="form-group col-md-8">
 								<label>Defect Description</label>
 								<textarea class="form-control" rows="2"
 									placeholder="Defect Description" name="defect_desc"
 									required></textarea>
 							</div>
+							<div class="form-group col-md-4">
+								<label>Defect Name</label> <input type="text"
+									class="form-control"  ng-model="defect.defect_name"
+									name="defect_name" required>
+							</div>
+						   <div class="form-group col-md-8">
+								<label>Comments</label> 
+								<textarea class="form-control" rows="2" placeholder="Comments"
+									name="comment" required></textarea>
+                             </div>
 							
 
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 								<label>Defect Status</label> <select class="form-control"
 									name="defect_status" required>
 									<option>New</option>
@@ -69,31 +79,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									<option>Closed</option>
 								</select>
 							</div>
-							<div class="form-group col-md-6">
-							<label>Defect Severity</label>
-								<div>
-									 <input type="radio" class="minimal" name="severity" value="low"
-										checked required>Low
-									 <input type="radio" class="minimal" name="severity"
-										value="moderate" required>Moderate
-									 <input type="radio" class="minimal" name="severity"
-										value="high" required>High
-									
-								</div>
-							</div>
-							<div class="form-group col-md-12">
-								<label>Defect Type</label>
+							<div class="form-group col-md-8">
+								<label>Defect Type</label> 
 								<input type="text"
 									class="form-control" placeholder="Defect Type"
 									name="defect_type" required>
+                             </div>
+							<div class="form-group col-md-4">
+							<label>Defect Severity</label>
+								<div>
+									 <input type="radio" class="minimal" name="severity" value="low"
+										checked required> Low
+									 <input type="radio" class="minimal" name="severity"
+										value="moderate" required> Moderate
+									 <input type="radio" class="minimal" name="severity"
+										value="high" required> High
+									
+								</div>
 							</div>
+							
+                     
 							
 							<%
 								Connection conn = DBUtility.getConnection();
 								PreparedStatement pst = conn.prepareStatement(SQLConstants.MODULE_ID);
 								ResultSet rs = pst.executeQuery();
 							%>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 								<label>Module ID</label> <select class="form-control"
 									name="module_id" required>
 									<%
@@ -113,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								PreparedStatement pst1 = conn1.prepareStatement(SQLConstants.ROLE_NAME);
 								ResultSet rs1 = pst1.executeQuery();
 							%>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 								<label>Assign To</label> <select class="form-control"
 									name="assigned_to" required>
 									<%
@@ -128,20 +140,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									DBUtility.closeConnection(conn1);
 								%>
 							</div>
-							<div class="form-group col-md-6">
-								<button type="submit" class="btn btn-block btn-primary btn-lg">Submit</button>
-							</div>
-							<div class="form-group col-md-6">
-								<button type="reset" class="btn btn-block btn-danger btn-lg">Reset</button>
-							</div>
-						</form>
+							
+							</form>
+							
+						
 					</div>
+					
 					<!-- /.box-body -->
 				</div>
+				<div class="col-xs-2">
+								<button type="submit" class="btn btn-block btn-primary btn-lg">Update</button>
+							</div>
+							<div class="form-group col-md-2">
+								<button type="reset" class="btn btn-block btn-danger btn-lg">Close</button>
+							</div>
 				<div style="display: none"></div>
 			</section>
+		
 			<!-- /.content -->
 		</div>
+			
 		<!-- /.content-wrapper -->
 
 		<!-- Main Footer -->
@@ -165,11 +183,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- iCheck -->
 <script src="lib/plugins/iCheck/icheck.min.js"></script>
 <script>
+var selectedDefect = '${selectedDefect}';
   $(function () {
     $(' input[type="radio"].minimal').iCheck({
       radioClass: 'iradio_square-blue',
     });
   });
+  
 </script>
 </body>
 </html>
