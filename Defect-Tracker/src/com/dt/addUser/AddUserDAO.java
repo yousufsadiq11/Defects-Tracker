@@ -24,7 +24,9 @@ public class AddUserDAO {
 		pst.setString(2, dao.getPassword());
 		pst1.setString(1, dao.getEmail());
 		x = pst.executeUpdate();
+		if(x>0){
 		pst1.executeUpdate();
+		}
 		DBUtility.closeConnection(conn);
 
 		}

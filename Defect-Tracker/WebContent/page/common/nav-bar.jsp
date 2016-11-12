@@ -1,6 +1,6 @@
 <%session=request.getSession();
 	if(session.getAttribute("userJson")==null){%>
-	<script language="JavaScript">
+	<script>
 document.location="RedirectController?url=index&type=PAGE";//redirect to home page decider
 </script>
 		<%}		 %>
@@ -8,7 +8,7 @@ document.location="RedirectController?url=index&type=PAGE";//redirect to home pa
 var userJson = '${userJson}';
 </script>
     <!-- Logo -->
-    <a href="dashboard.jsp" class="logo">
+    <a href="DashboardController" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>DT</b></span>
       <!-- logo for regular state and mobile devices -->

@@ -82,6 +82,5 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-<jsp:include page="page/include/script-library.jsp"></jsp:include>
 </body>
 </html>

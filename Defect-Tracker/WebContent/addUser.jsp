@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         Add New User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="RedirectController?url=DashboardController&type=CONTROLLER"><i class="fa fa-dashboard"></i> Dashboard</a></li>
         <li class="active">Add New User</li>
       </ol>
     </section>

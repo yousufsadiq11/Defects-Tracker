@@ -4,18 +4,6 @@
   <welcome-file-list>
     <welcome-file>RedirectController</welcome-file>
   </welcome-file-list>
-  <error-page>
-    <error-code>404</error-code>
-    <location>/errorPage.jsp</location>
-  </error-page>
-  <error-page>
-    <error-code>500</error-code>
-    <location>/errorPage.jsp</location>
-  </error-page>
-  <error-page>
-    <exception-type>Exception</exception-type>
-    <location>/errorPage.jsp</location>
-  </error-page>
   <servlet>
     <description></description>
     <display-name>LoginController</display-name>
@@ -105,7 +93,7 @@
   <servlet-mapping>
     <servlet-name>AddUserController</servlet-name>
     <url-pattern>/AddUserController</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>userProfileController</display-name>
@@ -115,5 +103,35 @@
   <servlet-mapping>
     <servlet-name>userProfileController</servlet-name>
     <url-pattern>/userProfileController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DashboardController</display-name>
+    <servlet-name>DashboardController</servlet-name>
+    <servlet-class>com.dt.utility.DashboardController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardController</servlet-name>
+    <url-pattern>/DashboardController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserProfileController</display-name>
+    <servlet-name>UserProfileController</servlet-name>
+    <servlet-class>com.dt.manageUser.UserProfileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserProfileController</servlet-name>
+    <url-pattern>/UserProfileController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DefectListController</display-name>
+    <servlet-name>DefectListController</servlet-name>
+    <servlet-class>com.dt.updateDefect.DefectListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DefectListController</servlet-name>
+    <url-pattern>/DefectListController</url-pattern>
   </servlet-mapping>
 </web-app>

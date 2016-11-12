@@ -25,11 +25,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Users
+        Dashboard
         <small>All the registered users on the system</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="RedirectController?url=dashboard&type=PAGE"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="DashboardController"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">All Users</li>
       </ol>
     </section>
@@ -107,7 +107,6 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
-<%-- <jsp:include page="page/include/script-library.jsp"></jsp:include> --%>
 <script src="lib/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/admin/userList.js"></script>

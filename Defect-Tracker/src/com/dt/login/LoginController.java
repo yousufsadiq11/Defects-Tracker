@@ -33,7 +33,7 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendError(404);
+		//response.sendError(404);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 	    RequestDispatcher rd = null;
 		if(loginBiz.isValidLogin(user))
 	    {
-			rd = request.getRequestDispatcher("RedirectController?url=dashboard&type="+SQLConstants.TYPE_PAGE);
+			rd = request.getRequestDispatcher("DashboardController");
 			HttpSession session = request.getSession();
 			IUserListBiz userListBiz = new UserListBiz();
 			String userJson = userListBiz.getUserDetails(user);
