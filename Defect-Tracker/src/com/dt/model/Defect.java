@@ -10,6 +10,7 @@ public class Defect {
 	String defect_type;
 	String severity;
 	int module_id;
+	String comment;
 	public int getDefect_id() {
 		return defect_id;
 	}
@@ -64,6 +65,11 @@ public class Defect {
 	public void setModule_id(int module_id) {
 		this.module_id = module_id;
 	}
-	
+	public String getComments() {
+		return comment;
+	}
+	public void setComments(String comment) {
+		this.comment = comment;
+	}
 
 }
