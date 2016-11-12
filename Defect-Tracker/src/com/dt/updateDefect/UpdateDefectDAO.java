@@ -2,7 +2,6 @@ package com.dt.updateDefect;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import com.dt.model.Defect;
 import com.dt.utility.DBUtility;
@@ -11,7 +10,7 @@ import com.dt.utility.SQLConstants;
 public class UpdateDefectDAO {
 	public int updateDefect(Defect dao) {
 		// TODO Auto-generated method stub
-		int max_id=0,x=0;
+		int x=0;
 		Connection conn=DBUtility.getConnection();
 		try{
 			

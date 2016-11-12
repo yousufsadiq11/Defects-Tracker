@@ -3,6 +3,7 @@ package com.dt.updateDefect;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,16 +24,18 @@ public class UpdateDefectController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		UpdateDefectBiz obj=new UpdateDefectBiz();
+	//	UpdateDefectBiz obj=new UpdateDefectBiz();
+		String selectedDefect = request.getParameter("defect");
+		request.setAttribute("selectedDefect", selectedDefect);
+		RequestDispatcher rd = request.getRequestDispatcher("updateDefect.jsp");
+		rd.forward(request, response);
+	/*	PrintWriter out = response.getWriter();
 		int flag=obj.updateDefect(request);
 		if(flag==1)
 		{
 			out.println("Defect updated successfully");
 		}
-		doGet(request, response);
+		doGet(request, response);*/
 	}
 
 }
