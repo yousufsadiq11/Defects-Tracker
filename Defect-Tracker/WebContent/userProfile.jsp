@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html ng-app="defect-tracker">
 <head>
  
-  <title>Defect Tacker | Dashboard</title>
+  <title>Defect Tacker | My Profile</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -36,7 +36,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content -->
     <section class="content" ng-controller="userDataController">
-
+		 <!-- Your Page Content Here -->
+				<div class="row">
+					<div class="col-xs-12">
+	<%if(request.getAttribute("message")!=null){ %>
+					<div class="callout callout-info">
+							<h4>Ding!</h4>
+								<p>${message}</p>
+							</div>
+							<%} %>
       <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">User Profile</h3>
@@ -78,6 +86,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<input type="hidden" name="user" />
 			<input type="submit">
 			</form>
+			</div>
+			</div>
 			</div>
     </section>
     <!-- /.content -->

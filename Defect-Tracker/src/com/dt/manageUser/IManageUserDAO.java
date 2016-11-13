@@ -15,4 +15,6 @@ public interface IManageUserDAO {
 
 	int deleteUser(User user);
 
+	int updatePassword(User obj);
+
 }

@@ -37,7 +37,42 @@ function userDataController($scope,UserDataService){
 		$scope.user.module = $scope.user.module;
 		$scope.user.role = $scope.user.role;
 		$("input[name='user']").val(JSON.stringify($scope.user));
-		
 		$("#userForm").attr("action","UpdateUserController").submit();
 	};
+}
+
+
+defectTracker.factory('PasswordDataService', function() {
+    return {
+        userData : $.parseJSON(selectedUser)
+    };
+});
+function updatePasswordController($scope,PasswordDataService){
+	$scope.user = PasswordDataService.userData;	
+	//alert(JSON.stringify($scope.user))
+	/*var currentPassword = $("#currentPassword").val();
+	var newPassword = $("#newPassword").val();
+	var confirmPassword = $("#confirmPassword").val();*/
+	$scope.updateDetails = function(){
+		if($scope.newPassword === $scope.confirmPassword){
+			if($scope.user.password === $scope.currentPassword){
+				if($scope.newPassword === $scope.currentPassword){
+					$("#message").text("Your new password is same as the existing one. Please choose a different password.");
+					$('#confirm-dialog').modal('toggle');
+				}else{
+				$scope.user.password = $scope.newPassword;
+				$("input[name='user']").val(JSON.stringify($scope.user));
+				//$("input[name='password']").val(JSON.stringify($scope.newPassword));
+				$("#userForm").attr("action","UpdatePasswordController").submit();
+				}
+			}else{
+				$("#message").text("Current password is invalid");
+				$('#confirm-dialog').modal('toggle');
+			}
+		}else{
+			$("#message").text("New password & Confirm password do not match")
+			$('#confirm-dialog').modal('toggle');
+		}
+	};
+	
 }

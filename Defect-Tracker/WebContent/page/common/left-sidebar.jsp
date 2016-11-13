@@ -33,7 +33,8 @@
         <%}else if(user.getRole().equals("Team Lead")){  %>
         <jsp:include page="user-left-sidebar/teamLead.jsp"></jsp:include>
         <%} %>
-        <li class="active"><a href="UserProfileController"><i class="fa  fa-user"></i> <span>Update Profile</span></a></li>
+        <li><a href="UserProfileController"><i class="fa  fa-user"></i> <span>Update Profile</span></a></li>
+        <li><a href="RedirectController?url=updatePassword&type=PAGE"><i class="fa  fa-gear"></i> <span>Change Password</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

@@ -13,4 +13,6 @@ public interface IManageUserBiz {
 	
 	public String removeUser(String user);
 
+	public String updatePassword(String user);
+
 }
