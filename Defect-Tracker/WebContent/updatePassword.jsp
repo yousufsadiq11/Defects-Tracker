@@ -25,8 +25,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Manage User
+    <h1>
+        My Profile
       </h1>
       <ol class="breadcrumb">
       	<li><a href="RedirectController?url=DashboardController&type=CONTROLLER"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -35,8 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </section>
 
     <!-- Main content -->
-    <section class="content" ng-controller="userDataController">
-		 <!-- Your Page Content Here -->
+    <section class="content" ng-controller="updatePasswordController">
+    <!-- Your Page Content Here -->
 				<div class="row">
 					<div class="col-xs-12">
 	<%if(request.getAttribute("message")!=null){ %>
@@ -47,32 +47,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<%} %>
       <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">User Profile</h3>
+              <h3 class="box-title">Update Password</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <form role="form">
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Full Name</label>
-                  <input type="text" class="form-control" placeholder="Full Name" ng-model="user.userName">
+                  <label>Existing Password</label>
+                  <input id="currentPassword" type="password" class="form-control" placeholder="Current Password" ng-model="currentPassword" required>
                 </div>
                 <div class="form-group">
-                  <label>Email</label>
-                  <input type="text" class="form-control" placeholder="Email" ng-model="user.email" readonly="readonly">
+                  <label>New Password</label>
+                  <input id="newPassword" type="password" class="form-control" placeholder="New Password" ng-model="newPassword" required>
                 </div>
-                <!-- select -->
                 <div class="form-group">
-                  <label>User Module</label>
-                  <input type="text" class="form-control" placeholder="Email" ng-model="user.module" readonly="readonly">
+                  <label>Confirm Password</label>
+                  <input id="confirmPassword" type="password" class="form-control" placeholder="Confirm Password" ng-model="confirmPassword" required>
                 </div>
                 
-                <div class="form-group">
-                  <label>User Role</label>
-                                    <input type="text" class="form-control" placeholder="Email" ng-model="user.role" readonly="readonly">
-                </div>
                 <div class="form-group col-md-6">
-                <button type="button" class="btn btn-block btn-primary btn-lg" ng-click="updateDetails()">Update Details</button>
+                <button type="submit" class="btn btn-block btn-primary btn-lg" ng-click="updateDetails()">Update Password</button>
                 </div>
                 <div class="form-group col-md-6">
                 <button type="reset" class="btn btn-block btn-danger btn-lg">Reset</button>
@@ -89,6 +84,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			</div>
 			</div>
 			</div>
+			<div id="confirm-dialog" class="modal fade modal-danger" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Error</h4>
+              </div>
+              <div class="modal-body">
+                <p id="message"></p>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
     </section>
     <!-- /.content -->
   </div>
@@ -113,9 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED JS SCRIPTS -->
 <script src="js/pages/userProfile.js"></script>
 <script>
-var selectedUser = '${selectedUser}';
-var listOfModules = '${listOfModules}';
-var listOfRoles = '${listOfRoles}';
+var selectedUser = '${userJson}';
 </script>
 </body>
 </html>

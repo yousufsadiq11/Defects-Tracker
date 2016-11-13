@@ -41,6 +41,19 @@ public class ManageUserBiz implements IManageUserBiz {
 			return SQLConstants.MESSAGE_REMOVE_USER_FAILURE;
 		}
 	}
+
+	@Override
+	public String updatePassword(String user) {
+		User obj = new User();
+		Gson gson = new Gson(); 
+		obj = gson.fromJson(user,User.class);
+		IManageUserDAO manageUserDAO = new ManageUserDAO();
+		if(manageUserDAO.updatePassword(obj)!=0){
+			return SQLConstants.MESSAGE_PASSWORD_SUCCESS;
+		}else{
+			return SQLConstants.MESSAGE_PASSWORD_FAILURE;
+		}
+	}
 	
 	
 

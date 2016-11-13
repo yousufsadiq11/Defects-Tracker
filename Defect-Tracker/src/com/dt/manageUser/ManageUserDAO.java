@@ -52,4 +52,21 @@ public class ManageUserDAO implements IManageUserDAO {
 		return numRows;
 	}
 
+	@Override
+	public int updatePassword(User user) {
+		int numRows = 0;
+		try {
+			Connection con = DBUtility.getConnection();
+			PreparedStatement stmt = con.prepareStatement(SQLConstants.UPDATE_USER_PASSWORD);
+			
+			stmt.setString(1,user.getPassword());
+			stmt.setString(2,user.getEmail());
+			numRows = stmt.executeUpdate();
+			DBUtility.closeConnection(con);
+		} catch (SQLException e) {
+			System.err.println("ERROR : \nSQL Error Code : " + e.getErrorCode() + " SQL State : " + e.getSQLState());
+		}
+		return numRows;
+	}
+
 }

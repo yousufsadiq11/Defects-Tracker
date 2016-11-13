@@ -134,4 +134,14 @@
     <servlet-name>DefectListController</servlet-name>
     <url-pattern>/DefectListController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdatePasswordController</display-name>
+    <servlet-name>UpdatePasswordController</servlet-name>
+    <servlet-class>com.dt.manageUser.UpdatePasswordController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdatePasswordController</servlet-name>
+    <url-pattern>/UpdatePasswordController</url-pattern>
+  </servlet-mapping>
 </web-app>
