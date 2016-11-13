@@ -1,36 +1,14 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html ng-app="defect-tracker">
+<html ng-app='defect-tracker'>
 <head>
  
-  <title>Defect Tracker | Dashboard</title>
+  <title>Defect Tacker | Dashboard</title>
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
- 
+ <!-- DataTables -->
+  <link rel="stylesheet" href="lib/plugins/datatables/dataTables.bootstrap.css">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-blue sidebar-mini">
+
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -48,19 +26,66 @@ desired effect
     <section class="content-header">
       <h1>
         Dashboard
-        <small></small>
+        <small>All the defects assigned to you.</small>
       </h1>
-     <!--  <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Here</li>
-      </ol> -->
+      <ol class="breadcrumb">
+        <li><a href="DashboardController"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">All Defects</li>
+      </ol>
     </section>
-
     <!-- Main content -->
-    <section class="content">
-
-      <!-- Your Page Content Here -->
-    </section>
+    <section class="content" ng-controller="defectListController">
+				<!-- Your Page Content Here -->
+				<div class="row">
+					<div class="col-xs-12">
+					<%if(request.getAttribute("message")!=null){ %>
+					<div class="callout callout-info">
+							<h4>Ding!</h4>
+								<p>${message}</p>
+							</div>
+							<%} %>
+						<div class="box">
+							<!-- /.box-header -->
+							<div class="box-body">
+								<table id="example1" class="table table-bordered table-striped">
+									<thead>
+										<tr>
+											<th>Defect ID</th>
+											<th>Title</th>
+											<th>Status</th>
+											<th>Severity</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr  ng-repeat="defect in defects" ng-click="manageDefect();">
+											<td>{{defect.defect_id}}</td>
+											<td>{{defect.defect_name}}</td>
+											<td>{{defect.defect_status}}</td>
+											<td>{{defect.severity}}</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>Defect ID</th>
+											<th>Title</th>
+											<th>Status</th>
+											<th>Severity</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+							<!-- /.box-body -->
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div style="display:none">
+			<form id="selectDefectForm" action="UpdateDefectController" method="post">
+			<input type="hidden" name="defect" />
+			<input type="submit">
+			</form>
+			</div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -81,8 +106,26 @@ desired effect
 </div>
 <!-- ./wrapper -->
 
-
-
+<!-- REQUIRED JS SCRIPTS -->
+<script src="lib/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/pages/dashboard.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<script>
+var defectsFromDB = '${listOfDefects}';
+
+</script>
 </body>
 </html>

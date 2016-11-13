@@ -1,8 +1,8 @@
 package com.dt.addDefect;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,27 +26,23 @@ public class AddDefectController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendError(500);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
 		AddDefectBiz obj=new AddDefectBiz();
 		int flag=obj.AddDefect(request);
+		RequestDispatcher rd = request.getRequestDispatcher("DefectListController");
 		if(flag==1){
-			
-			
-			out.println("Defect added successfully");
-		   
+			request.setAttribute("message", "New defect created.");
 		}
-		
-		doGet(request, response);
+		else{
+			request.setAttribute("message", "Some error occurred. Please try again.");
+		}
+		rd.forward(request, response);
 	}
 
 }

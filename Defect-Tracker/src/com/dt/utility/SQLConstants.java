@@ -37,6 +37,8 @@ public class SQLConstants {
 	public static final String INSERT_USER="INSERT INTO USER(EMAIL) VALUES(?)";
 	public static final String UPDATE_DEFECT="UPDATE defect SET DEFECT_NAME=?,DEFECT_DESC=?,ASSIGNED_TO=?,ASSIGNED_DATE=?,DEFECT_STATUS=?,DEFECT_TYPE=?,SEVERITY=?,MODULE_ID=?,COMMENTS=?)";
 	public static final String UPDATE_USER_PASSWORD = "UPDATE LOGIN SET PASSWORD = ? WHERE LOGIN_ID = ?";
+	public static final String GET_DEFECT_LIST = "SELECT * FROM DEFECT WHERE ASSIGNED_TO = ?";
+	public static final String GET_DEFECT_DETAILS = "SELECT * FROM DEFECT WHERE DEFECT_ID = ?";
 	
 
 }

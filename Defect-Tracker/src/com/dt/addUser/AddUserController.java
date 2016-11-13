@@ -5,8 +5,8 @@ package com.dt.addUser;
  *
  */
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,22 +39,18 @@ public class AddUserController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
 		AddUserBiz obj=new AddUserBiz();
 		int flag=obj.AddUser(request);
+		RequestDispatcher rd = request.getRequestDispatcher("DefectListController");
 		if(flag==1){
-		out.println("User successfully added in the system and notification has been sent to regsitered email id.");
-		out.println("<a href=RedirectController?url=DashboardController&type=CONTROLLER>Go Back to Dashboard</a>");
+			request.setAttribute("message", "User successfully added in the system and notification has been sent to regsitered email id.");
 		}
 		else
 		{
-			out.println("User Already Exist");
-			out.println("<a href=RedirectController?url=DashboardController&type=CONTROLLER>Go Back to Dashboard</a>");
+			request.setAttribute("message", "User Already Exist");
 		}
+		rd.forward(request, response);
 		
-	//	doGet(request, response);
-	
 	}
 
 

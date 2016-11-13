@@ -35,11 +35,12 @@ public class DashboardController extends HttpServlet {
 		User obj = new User();
 		Gson gson = new Gson(); 
 		obj = gson.fromJson(userJson,User.class);
+		
 		RequestDispatcher rd = null;
 		if(null != obj.getRole() && obj.getRole().equals("ADMIN")){
 			rd = request.getRequestDispatcher("UserListController");
 			}else{
-			rd = request.getRequestDispatcher("RedirectController?url=DefectListController&type=CONTROLLER");
+			rd = request.getRequestDispatcher("DefectListController");
 			}
 		rd.forward(request, response);
 	}

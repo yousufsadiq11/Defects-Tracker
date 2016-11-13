@@ -128,7 +128,7 @@
     <description></description>
     <display-name>DefectListController</display-name>
     <servlet-name>DefectListController</servlet-name>
-    <servlet-class>com.dt.updateDefect.DefectListController</servlet-class>
+    <servlet-class>com.dt.defectList.DefectListController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DefectListController</servlet-name>
@@ -143,5 +143,15 @@
   <servlet-mapping>
     <servlet-name>UpdatePasswordController</servlet-name>
     <url-pattern>/UpdatePasswordController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateDefectController</display-name>
+    <servlet-name>UpdateDefectController</servlet-name>
+    <servlet-class>com.dt.updateDefect.UpdateDefectController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateDefectController</servlet-name>
+    <url-pattern>/UpdateDefectController</url-pattern>
   </servlet-mapping>
 </web-app>

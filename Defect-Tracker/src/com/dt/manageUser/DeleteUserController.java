@@ -36,7 +36,7 @@ public class DeleteUserController extends HttpServlet {
 		String user = request.getParameter("user");
 		IManageUserBiz manageUserBiz = new ManageUserBiz();
 		String responseMessage = manageUserBiz.removeUser(user);
-		RequestDispatcher rd = request.getRequestDispatcher("UserListController");
+		RequestDispatcher rd = request.getRequestDispatcher("DefectListController");
 		request.setAttribute("message", responseMessage);
 		rd.forward(request, response);
 	}

@@ -1,4 +1,4 @@
-package com.dt.manageUser;
+package com.dt.defectList;
 
 import java.io.IOException;
 
@@ -13,15 +13,15 @@ import com.dt.model.User;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class UpdateUserController
+ * Servlet implementation class AssignRoleController
  */
-public class UpdateUserController extends HttpServlet {
+public class DefectListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateUserController() {
+    public DefectListController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,31 +30,23 @@ public class UpdateUserController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendError(404);
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String user = request.getParameter("user");
-		IManageUserBiz manageUserBiz = new ManageUserBiz();
 		HttpSession session = request.getSession();
-		String responseMessage = manageUserBiz.updateUserDetails(user);
+		String userJson = session.getAttribute("userJson").toString();
 		User obj = new User();
 		Gson gson = new Gson(); 
-		obj = gson.fromJson(user,User.class);
-		RequestDispatcher rd = null;
-		User loggedInUser = new User();
-		loggedInUser = gson.fromJson(session.getAttribute("userJson").toString(), User.class);
-		if(!obj.compareUser(loggedInUser)){
-		rd = request.getRequestDispatcher("DefectListController");
-		}else{
-		rd = request.getRequestDispatcher("RedirectController?url=UserProfileController&type=CONTROLLER");
-		session.setAttribute("userJson", user);
-		request.setAttribute("userJson", user);
-		}
-		request.setAttribute("message", responseMessage);
+		obj = gson.fromJson(userJson,User.class);
+		IDefectListBiz defectListBiz = new DefectListBiz();
+		String listofDefects = defectListBiz.getDefectList(obj);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("RedirectController?url=dashboard&type=PAGE");
+		request.setAttribute("listOfDefects", listofDefects);
 		rd.forward(request, response);
 	}
 
