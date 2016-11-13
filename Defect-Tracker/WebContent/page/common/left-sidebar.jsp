@@ -23,7 +23,7 @@
         User user = new User();
 		Gson gson = new Gson(); 
 		user = gson.fromJson(userJson,User.class);
-		if(user.getRole().equals("ADMIN")){
+		if((null != user.getRole()) && user.getRole().equals("ADMIN")){
         %>
         <jsp:include page="user-left-sidebar/admin.jsp"></jsp:include>
         <%}else if(user.getRole().equals("Tester")){ %>

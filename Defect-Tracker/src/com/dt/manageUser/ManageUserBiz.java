@@ -20,12 +20,9 @@ public class ManageUserBiz implements IManageUserBiz {
 		Gson gson = new Gson(); 
 		obj = gson.fromJson(user,User.class);
 		IManageUserDAO manageUserDAO = new ManageUserDAO();
-		
 		if(manageUserDAO.updateUserDetails(obj)!=0){
-			System.out.println(" Update success");
 			return SQLConstants.MESSAGE_USER_DETAILS_SUCCESS;
 		}else{
-			System.out.println(" Update fail");
 			return SQLConstants.MESSAGE_USER_DETAILS_FAILURE;
 		}
 	}
@@ -39,10 +36,8 @@ public class ManageUserBiz implements IManageUserBiz {
 		IManageUserDAO manageUserDAO = new ManageUserDAO();
 		
 		if(manageUserDAO.deleteUser(obj)!=0){
-			System.out.println("Delete success");
 			return SQLConstants.MESSAGE_REMOVE_USER_SUCCESS;
 		}else{
-			System.out.println("Delete fail");
 			return SQLConstants.MESSAGE_REMOVE_USER_FAILURE;
 		}
 	}

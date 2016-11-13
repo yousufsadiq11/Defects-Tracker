@@ -17,7 +17,6 @@ public class LoginDAO implements ILoginDAO
 		PreparedStatement stmt = null;
 		String username = bean.getEmail();
 		String password = bean.getPassword();
-		System.out.println("username = "+username+"==password = "+password);
 		try
 		{
 			Connection currentCon= DBUtility.getConnection();

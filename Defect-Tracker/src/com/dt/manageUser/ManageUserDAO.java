@@ -30,7 +30,6 @@ public class ManageUserDAO implements IManageUserDAO {
 			stmt.setString(4,user.getModule());
 			stmt.setInt(5,user.getUserId());
 			numRows = stmt.executeUpdate();
-			System.out.println("numRows=="+numRows);
 			DBUtility.closeConnection(con);
 		} catch (SQLException e) {
 			System.err.println("ERROR : \nSQL Error Code : " + e.getErrorCode() + " SQL State : " + e.getSQLState());
@@ -46,7 +45,6 @@ public class ManageUserDAO implements IManageUserDAO {
 			PreparedStatement stmt = con.prepareStatement(SQLConstants.REMOVE_USER);
 			stmt.setInt(1,user.getUserId());
 			numRows = stmt.executeUpdate();
-			System.out.println("numRows=="+numRows);
 			DBUtility.closeConnection(con);
 		} catch (SQLException e) {
 			System.err.println("ERROR : \nSQL Error Code : " + e.getErrorCode() + " SQL State : " + e.getSQLState());

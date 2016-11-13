@@ -89,5 +89,11 @@ public class User {
 		this.userId = userId;
 	}
 	
-
+	public Boolean compareUser(User user){
+		if(this.getUserId() == user.getUserId()){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

@@ -1,8 +1,15 @@
+
 <!DOCTYPE html>
 <html>
 <head>
- 
+ <%session=request.getSession();
+	if(session.getAttribute("userJson")!=null){%>
+	<script>
+document.location="DashboardController";//redirect to home page decider
+</script>
+		<%}		 %>
   <title>DT | Login</title>
+  
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
  <!-- iCheck -->
   <link rel="stylesheet" href="lib/plugins/iCheck/square/blue.css">

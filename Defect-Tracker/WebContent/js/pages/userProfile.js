@@ -34,9 +34,10 @@ function userDataController($scope,UserDataService){
 	$scope.userRole = $scope.getRoleFromName(JSON.stringify($scope.user.role));*/
 	
 	$scope.updateDetails = function(){
-		$scope.user.module = $scope.getModuleFromName(JSON.stringify($scope.user.module));
-		$scope.user.role = $scope.getRoleFromName(JSON.stringify($scope.user.role));
+		$scope.user.module = $scope.user.module;
+		$scope.user.role = $scope.user.role;
 		$("input[name='user']").val(JSON.stringify($scope.user));
+		
 		$("#userForm").attr("action","UpdateUserController").submit();
 	};
 }
