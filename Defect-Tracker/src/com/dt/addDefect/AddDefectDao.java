@@ -16,12 +16,7 @@ public class AddDefectDao {
 		try{
 			
 		PreparedStatement pst = conn.prepareStatement(SQLConstants.ADD_DEFECT);
-	//	PreparedStatement pst1=conn.prepareStatement(SQLConstants.MAX_DEFECT_ID);
-	//	ResultSet rs1=pst1.executeQuery();
-	//	while(rs1.next()){
-	//		max_id=rs1.getInt(1);
-	//	}
-	//	pst.setInt(1, max_id+1);
+	
 		pst.setString(1, dao.getDefect_name());
 		pst.setString(2,dao.getDefect_desc());
 		pst.setString(3,dao.getAssigned_to());
