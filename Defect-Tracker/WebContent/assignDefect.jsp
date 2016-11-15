@@ -103,6 +103,9 @@ desired effect
                     <td>{{defect.defect_name}}</td>
                     
                     <td   ><div ng-if="check(defect)=='New'"><span class="label label-warning">{{defect.defect_status}}</span></div>
+                    <div ng-if="[check(defect)] == 'closed'"><span class="label label-success">{{defect.defect_status}}</span></div>
+
+
                     </td>
                   
                   </tr>
@@ -121,7 +124,7 @@ desired effect
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->
-       
+        </div>
     </section>
     <!-- /.content -->
   </div>

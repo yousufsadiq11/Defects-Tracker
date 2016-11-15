@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			</section>
 
 			<!-- Main content -->
-			<section class="content">
+			<section class="content" ng-controller="defectDataController">
 
 				<div class="box box-warning">
 					<!-- /.box-header -->
@@ -49,9 +49,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<form role="form" method="post" action="UpdateDefectController">
 							<!-- text input -->
 							<div class="form-group col-md-4">
-								Defect ID <input type="text"
-									class="form-control"  ng-model="defect.defect_id"
-									name="defect_id" disabled>
+								<label>Defect ID</label> <input type="text"
+									class="form-control" 
+									name="defect_id" ng-model="defect.defect_id">
 							</div>
 								<div class="form-group col-md-8">
 								<label>Defect Description</label>
@@ -140,20 +140,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									DBUtility.closeConnection(conn1);
 								%>
 							</div>
-							
-							</form>
-							
-						
-					</div>
-					
-					<!-- /.box-body -->
-				</div>
-				<div class="col-xs-2">
+							<div class="col-xs-2">
 								<button type="submit" class="btn btn-block btn-primary btn-lg">Update</button>
 							</div>
 							<div class="form-group col-md-2">
 								<button type="reset" class="btn btn-block btn-danger btn-lg">Close</button>
 							</div>
+							
+							</form>
+						
+					</div>
+					
+					<!-- /.box-body -->
+				</div>
+				
 				<div style="display: none"></div>
 			</section>
 		
@@ -179,9 +179,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<!-- ./wrapper -->
 
 	<!-- REQUIRED JS SCRIPTS -->
-	<jsp:include page="page/include/script-library.jsp"></jsp:include>
 	<!-- iCheck -->
 <script src="lib/plugins/iCheck/icheck.min.js"></script>
+<script src="js/pages/updateDefect.js"></script>
 <script>
 var selectedDefect = '${selectedDefect}';
   $(function () {
