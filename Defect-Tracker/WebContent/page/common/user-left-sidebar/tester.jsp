@@ -1,5 +1,7 @@
 <!-- Optionally, you can add icons to the links -->
         <li><a href="RedirectController?url=addDefect&type=PAGE"><i class="fa  fa-bug"></i> <span>Add Defect</span></a></li>
+        <li><a href="assignDefectController"><i class="fa  fa-bug"></i> <span>Assign Defect</span></a></li>
+        <li><a href="updateDefectStatusController"><i class="fa  fa-bug"></i> <span>Update Defect Status</span></a></li>
         <!-- <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

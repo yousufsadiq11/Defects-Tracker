@@ -154,4 +154,54 @@
     <servlet-name>UpdateDefectController</servlet-name>
     <url-pattern>/UpdateDefectController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>assignDefectController</display-name>
+    <servlet-name>assignDefectController</servlet-name>
+    <servlet-class>com.dt.assignDefect.assignDefectController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignDefectController</servlet-name>
+    <url-pattern>/assignDefectController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>assignLeadsController</display-name>
+    <servlet-name>assignLeadsController</servlet-name>
+    <servlet-class>com.dt.assignLead.assignLeadsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignLeadsController</servlet-name>
+    <url-pattern>/assignLeadsController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateDefectStatusController</display-name>
+    <servlet-name>updateDefectStatusController</servlet-name>
+    <servlet-class>com.dt.defectsList.updateDefectStatusController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateDefectStatusController</servlet-name>
+    <url-pattern>/updateDefectStatusController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>modifyStatusController</display-name>
+    <servlet-name>modifyStatusController</servlet-name>
+    <servlet-class>com.dt.modifyDefectStatus.modifyStatusController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modifyStatusController</servlet-name>
+    <url-pattern>/modifyStatusController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>statusUpdateController</display-name>
+    <servlet-name>statusUpdateController</servlet-name>
+    <servlet-class>com.dt.statusUpdate.statusUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>statusUpdateController</servlet-name>
+    <url-pattern>/statusUpdateController</url-pattern>
+  </servlet-mapping>
 </web-app>

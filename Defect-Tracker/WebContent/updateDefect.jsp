@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<form role="form" method="post" action="UpdateDefectController">
 							<!-- text input -->
 							<div class="form-group col-md-4">
-								<label>Defect ID</label> <input type="text"
+								Defect ID <input type="text"
 									class="form-control"  ng-model="defect.defect_id"
 									name="defect_id" disabled>
 							</div>

@@ -26,7 +26,7 @@ public class DefectListDAO implements IDefectListDAO{
 		
 		try {
 			Connection con = DBUtility.getConnection();
-			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_DEFECT_LIST);
+			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_DEFECT_LIST1);
 			stmt.setString(1, user.getRole());
 			ResultSet resultSet = stmt.executeQuery();
 			while(resultSet.next()){
