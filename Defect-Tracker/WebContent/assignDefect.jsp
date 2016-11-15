@@ -72,12 +72,7 @@ desired effect
             <div class="box-header with-border">
               <h3 class="box-title">Unassigned Defects</h3>
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
+            
             <!-- /.box-header -->
             
             <div class="box-body">
@@ -102,8 +97,7 @@ desired effect
                    
                     <td>{{defect.defect_name}}</td>
                     
-                    <td   ><div ng-if="check(defect)=='New'"><span class="label label-warning">{{defect.defect_status}}</span></div>
-                    <div ng-if="[check(defect)] == 'closed'"><span class="label label-success">{{defect.defect_status}}</span></div>
+                    <td   ><div ng-if="check(defect)=='New'"><span class="label label-info">{{defect.defect_status}}</span></div>
 
 
                     </td>
@@ -147,13 +141,6 @@ desired effect
 <!-- ./wrapper -->
 
 <!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
 <!-- page script -->
 <script src="lib/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>

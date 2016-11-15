@@ -20,16 +20,17 @@ public class UpdateDefectDAO {
 	//	while(rs1.next()){
 	//		max_id=rs1.getInt(1);
 	//	}
-	//	pst.setInt(1, max_id+1);
-		pst.setString(2, dao.getDefect_name());
-		pst.setString(3,dao.getDefect_desc());
-		pst.setString(4,dao.getAssigned_to());
-		pst.setString(5, dao.getAssigned_date());
-		pst.setString(6, dao.getDefect_status());
-		pst.setString(7,dao.getDefect_type());
-		pst.setString(8, dao.getSeverity());
-		pst.setInt(9, dao.getModule_id());
-		pst.setString(10, dao.getComments());
+	//	
+		pst.setString(1, dao.getDefect_name());
+		pst.setString(2,dao.getDefect_desc());
+		pst.setString(3,dao.getAssigned_to());
+		pst.setString(4, dao.getAssigned_date());
+		pst.setString(5, dao.getDefect_status());
+		pst.setString(6,dao.getDefect_type());
+		pst.setString(7, dao.getSeverity());
+		pst.setInt(8, dao.getModule_id());
+		pst.setString(9, dao.getComments());
+		pst.setInt(10, dao.getDefect_id());
 		
 		x = pst.executeUpdate();
 		DBUtility.closeConnection(conn);

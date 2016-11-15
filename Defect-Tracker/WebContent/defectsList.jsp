@@ -102,10 +102,7 @@ desired effect
                    
                     <td>{{defect.defect_name}}</td>
                     
-                    <td   ><div ng-if="check(defect)=='New'"><span class="label label-warning">{{defect.defect_status}}</span></div>
-                    <div ng-if="[check(defect)] == 'closed'"><span class="label label-success">{{defect.defect_status}}</span></div>
-
-
+                    <td   ><div ng-if="check(defect)=='New'"><span class="label label-info">{{defect.defect_status}}</span></div>
                     </td>
                   
                   </tr>
@@ -124,7 +121,6 @@ desired effect
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->
-        </div>
     </section>
     <!-- /.content -->
   </div>
@@ -145,23 +141,10 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
 <!-- page script -->
 <script src="lib/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/tester/defectList.js"></script>
-
-
-<script src="js/pages/dashboard.js"></script>
-
 <script>
 $(document).ready(function() {
     $('#example2').DataTable();

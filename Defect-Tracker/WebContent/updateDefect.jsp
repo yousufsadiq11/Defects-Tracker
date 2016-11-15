@@ -9,7 +9,7 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
+<html ng-app="defect-tracker">
 <head>
 
 <title>Defect Tacker | Update Defect</title>
@@ -51,31 +51,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<div class="form-group col-md-4">
 								<label>Defect ID</label> <input type="text"
 									class="form-control" 
-									name="defect_id" ng-model="defect.defect_id">
+									name="defect_id" ng-model="defect.defect_id" readonly="readonly">
 							</div>
 								<div class="form-group col-md-8">
 								<label>Defect Description</label>
 								<textarea class="form-control" rows="2"
-									placeholder="Defect Description" name="defect_desc"
-									required></textarea>
+									placeholder="Defect Description" name="defect_desc" ng-model="defect.defect_desc" readonly="readonly"></textarea>
 							</div>
 							<div class="form-group col-md-4">
 								<label>Defect Name</label> <input type="text"
-									class="form-control"  ng-model="defect.defect_name"
-									name="defect_name" required>
+									class="form-control"  ng-model="defect.defect_name" 
+									name="defect_name" readonly="readonly">
 							</div>
 						   <div class="form-group col-md-8">
 								<label>Comments</label> 
 								<textarea class="form-control" rows="2" placeholder="Comments"
-									name="comment" required></textarea>
+									name="comment" ng-model="defect.comment"></textarea>
                              </div>
 							
 
 							<div class="form-group col-md-4">
 								<label>Defect Status</label> <select class="form-control"
-									name="defect_status" required>
+									name="defect_status" ng-model="defect.defect_status">
 									<option>New</option>
 									<option>Re-Open</option>
+									<option>Fixed</option>
 									<option>Closed</option>
 								</select>
 							</div>
@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<label>Defect Type</label> 
 								<input type="text"
 									class="form-control" placeholder="Defect Type"
-									name="defect_type" required>
+									name="defect_type" ng-model="defect.defect_desc" readonly="readonly">
                              </div>
 							<div class="form-group col-md-4">
 							<label>Defect Severity</label>
@@ -98,36 +98,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</div>
 							</div>
 							
-                     
-							
-							<%
-								Connection conn = DBUtility.getConnection();
-								PreparedStatement pst = conn.prepareStatement(SQLConstants.MODULE_ID);
-								ResultSet rs = pst.executeQuery();
-							%>
 							<div class="form-group col-md-4">
-								<label>Module ID</label> <select class="form-control"
-									name="module_id" required>
-									<%
-										while (rs.next()) {
-									%>
-									<option><%=rs.getInt(1)%></option>
-									<%
-										}
-									%>
-								</select>
-								<%
-									DBUtility.closeConnection(conn);
-								%>
+								<label>Module ID</label> <input type="text"
+									class="form-control" placeholder="Defect Type"
+									name="module_id" ng-model="defect.module_id" readonly="readonly">
+								
 							</div>
-							<%
+								<%
 								Connection conn1 = DBUtility.getConnection();
 								PreparedStatement pst1 = conn1.prepareStatement(SQLConstants.ROLE_NAME);
 								ResultSet rs1 = pst1.executeQuery();
 							%>
 							<div class="form-group col-md-4">
 								<label>Assign To</label> <select class="form-control"
-									name="assigned_to" required>
+									name="assigned_to" ng-model="defect.assigned_to" >
 									<%
 										while (rs1.next()) {
 									%>
@@ -139,6 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<%
 									DBUtility.closeConnection(conn1);
 								%>
+								
 							</div>
 							<div class="col-xs-2">
 								<button type="submit" class="btn btn-block btn-primary btn-lg">Update</button>

@@ -20,7 +20,7 @@ public ArrayList<Defect> getDefectList() {
 		try {
 			Connection con = DBUtility.getConnection();
 			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_DEFECT_LIST);
-			stmt.setString(1, "unassigned");
+			stmt.setString(1, "Undefined");
 			ResultSet resultSet = stmt.executeQuery();
 			while(resultSet.next()){
 				Defect defect = new Defect();

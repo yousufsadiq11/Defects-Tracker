@@ -40,6 +40,7 @@ public class DefectListDAO implements IDefectListDAO{
 				defect.setSeverity(resultSet.getString("severity"));
 				defect.setAssigned_to(resultSet.getString("assigned_to"));
 				defect.setAssigned_date(resultSet.getString("assigned_date"));
+				defect.setComments(resultSet.getString("comments"));
 				listOfDefects.add(defect);
 			}
 			DBUtility.closeConnection(con);

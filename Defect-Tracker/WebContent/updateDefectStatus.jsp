@@ -111,12 +111,6 @@ JsonArray jsonArray = new JsonArray();
         <div class="box-header ">
           <h3 class="box-title"><b>Defect Name:  </b><%=defect.getDefect_name() %></h3>
                   
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
         </div>
         <div class="box-body">
          <b> Defect Description:  </b>
@@ -174,12 +168,10 @@ JsonArray jsonArray = new JsonArray();
       
         
         <!-- /.box-footer-->
-      </div>
       <!-- /.box -->
-
-    </section>
+</section>
       <!-- Your Page Content Here -->
-    </section>
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

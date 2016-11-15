@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 public class UpdateDefectController extends HttpServlet {
@@ -24,19 +23,13 @@ public class UpdateDefectController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		UpdateDefectBiz obj=new UpdateDefectBiz();
-		String selectedDefect = request.getParameter("defect");
-		HttpSession session = request.getSession();
-		request.setAttribute("selectedDefect", selectedDefect);
-		RequestDispatcher rd = request.getRequestDispatcher("updateDefect.jsp");
+	
+		
+		UpdateDefectBiz obj = new UpdateDefectBiz();
+		obj.updateDefect(request);
+		RequestDispatcher rd = request.getRequestDispatcher("DashboardController");
 		rd.forward(request, response);
-	/*	PrintWriter out = response.getWriter();
-		int flag=obj.updateDefect(request);
-		if(flag==1)
-		{
-			out.println("Defect updated successfully");
-		}
-		doGet(request, response);*/
+		
 	}
 
 }

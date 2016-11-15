@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- select -->
                 <div class="form-group">
                   <label>User Module</label>
-                  <input type="text" class="form-control" placeholder="Email" ng-model="user.module" readonly="readonly">
+                  <input type="text" class="form-control" placeholder="Module" ng-model="user.module" readonly="readonly">
                 </div>
                 
                 <div class="form-group">

@@ -34,15 +34,15 @@ public class SQLConstants {
 	public static final String ROLE_NAME="select role_name from role";
 	public static final String ADD_DEFECT="insert into defect(defect_name,defect_desc,assigned_to,assigned_date,defect_status,defect_type,severity,module_id,comments) values(?,?,?,?,?,?,?,?,'null')";
 	public static final String ADD_USER="INSERT INTO LOGIN(login_id,password) VALUES(?,?)";
-	public static final String INSERT_USER="INSERT INTO USER(EMAIL) VALUES(?)";
-	public static final String UPDATE_DEFECT="UPDATE defect SET DEFECT_NAME=?,DEFECT_DESC=?,ASSIGNED_TO=?,ASSIGNED_DATE=?,DEFECT_STATUS=?,DEFECT_TYPE=?,SEVERITY=?,MODULE_ID=?,COMMENTS=?)";
+	public static final String INSERT_USER="INSERT INTO USER(EMAIL,ROLE_ID) VALUES(?,6)";
+	public static final String UPDATE_DEFECT="UPDATE defect SET DEFECT_NAME=?,DEFECT_DESC=?,ASSIGNED_TO=?,ASSIGNED_DATE=?,DEFECT_STATUS=?,DEFECT_TYPE=?,SEVERITY=?,MODULE_ID=?,COMMENTS=? where defect_id=?";
 	public static final String UPDATE_USER_PASSWORD = "UPDATE LOGIN SET PASSWORD = ? WHERE LOGIN_ID = ?";
 	public static final String GET_DEFECT_LIST1 = "SELECT * FROM DEFECT WHERE ASSIGNED_TO = ?";
 	public static final String GET_DEFECT_DETAILS = "SELECT * FROM DEFECT WHERE DEFECT_ID = ?";
 	public static final String GET_DEFECT_LIST="select defect_id,defect_name,defect_status,defect_desc from defect where assigned_to=?";
 	public static final String GET_ALL_DEFECT_LIST="select defect_id,defect_name,defect_desc,defect_status from defect";
 	public static final String GET_SPECIFIC_DEFECT="select * from defect where defect_id=?";
-	public static final String ROLE_NAME_LEAD="select user_name from user where role_id=2";
+	public static final String ROLE_NAME_LEAD="select email from user where role_id=(SELECT ROLE_ID FROM ROLE WHERE ROLE_NAME='Team Lead')";
 	public static final String SET_DEFECT_LEAD="update defect set assigned_to=? where defect_id=?";
 	public static final String SET_DEFECT_STATUS="update defect set defect_status=? where defect_id=?";
 	

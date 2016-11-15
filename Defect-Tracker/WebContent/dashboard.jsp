@@ -81,7 +81,7 @@
 			</section>
 			
 			<div style="display:none">
-			<form id="selectDefectForm" action="UpdateDefectController" method="post">
+			<form id="selectDefectForm" action="UpdateDefectControllerToDashboard" method="post">
 			<input type="hidden" name="defect" />
 			<input type="submit">
 			</form>

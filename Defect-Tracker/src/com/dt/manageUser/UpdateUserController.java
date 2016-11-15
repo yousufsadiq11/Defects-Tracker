@@ -47,8 +47,9 @@ public class UpdateUserController extends HttpServlet {
 		RequestDispatcher rd = null;
 		User loggedInUser = new User();
 		loggedInUser = gson.fromJson(session.getAttribute("userJson").toString(), User.class);
+		System.out.println(loggedInUser.getUserId()+"--"+obj.getUserId());
 		if(!obj.compareUser(loggedInUser)){
-		rd = request.getRequestDispatcher("DefectListController");
+		rd = request.getRequestDispatcher("DashboardController");
 		}else{
 		rd = request.getRequestDispatcher("RedirectController?url=UserProfileController&type=CONTROLLER");
 		session.setAttribute("userJson", user);

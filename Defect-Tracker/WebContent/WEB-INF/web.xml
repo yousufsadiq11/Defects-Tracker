@@ -204,4 +204,14 @@
     <servlet-name>statusUpdateController</servlet-name>
     <url-pattern>/statusUpdateController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateDefectControllerToDashboard</display-name>
+    <servlet-name>UpdateDefectControllerToDashboard</servlet-name>
+    <servlet-class>com.dt.updateDefect.UpdateDefectControllerToDashboard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateDefectControllerToDashboard</servlet-name>
+    <url-pattern>/UpdateDefectControllerToDashboard</url-pattern>
+  </servlet-mapping>
 </web-app>
