@@ -21,8 +21,12 @@
         <li class="header">Menu</li>
         <%String userJson = session.getAttribute("userJson").toString();
         User user = new User();
+      
 		Gson gson = new Gson(); 
-		user = gson.fromJson(userJson,User.class);
+		user = gson.fromJson(userJson,User.class);  
+		request.setAttribute("email", user.getEmail());
+		session.setAttribute("current_email",user.getEmail());
+		session.setAttribute("current_user_left",user.getUserName());
 		if((null != user.getRole()) && user.getRole().equals("ADMIN")){
         %>
         <jsp:include page="user-left-sidebar/admin.jsp"></jsp:include>

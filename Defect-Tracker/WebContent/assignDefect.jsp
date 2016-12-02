@@ -57,17 +57,25 @@ desired effect
     </section>
 
     <!-- Main content -->
+    <%String current_email=(String)session.getAttribute("current_email");
+    String current_user=(String)session.getAttribute("current_user_left");
+    System.out.println("current User_assign"+current_user);
+    session.setAttribute("email", current_email);
+    session.setAttribute("current_user", current_user);
+    %>
     <section class="content" ng-controller="DefectListController">
-
       <!-- Your Page Content Here -->
       <%if(request.getAttribute("message")!=null){ %>
        <div class="pad margin no-print">
       <div class="callout callout-info" style="margin-bottom: 0!important;">
-        <h4>Defect ID '{{id.selector}}' {{message.selector}} {{lead.selector}}</h4>
+        <h4>Defect ID '{{id}}' {{message}} {{lead}} </h4>
         
       </div>
     </div>
-      <%} %>
+      <%
+      
+      
+      } %>
       <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Unassigned Defects</h3>
@@ -146,8 +154,6 @@ desired effect
 <script src="lib/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/tester/defectList.js"></script>
 
-
-<script src="js/pages/dashboard.js"></script>
 
 <script>
 $(document).ready(function() {

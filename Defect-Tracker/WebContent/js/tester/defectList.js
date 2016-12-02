@@ -1,9 +1,9 @@
 defectTracker.factory('DefectListService', function() {
     return {
         defects : $.parseJSON(defectsFromDB) ,
-        message: $(message),
-        id: $(id),
-        lead: $(lead)
+        message: message,
+        id: id,
+        lead: lead
         //usersFromDB is set in the jsp <script> tag
     };
 });

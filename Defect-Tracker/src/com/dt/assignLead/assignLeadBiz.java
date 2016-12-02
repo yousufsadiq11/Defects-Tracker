@@ -34,5 +34,11 @@ public class assignLeadBiz {
 		return flag;
 	}
 
+	public String getDefectDescription(int id) {
+		// TODO Auto-generated method stub
+		assignLeadDao defectListDao=new assignLeadDao();
+		return defectListDao.getDefectDescription(id);
+	}
+
 
 }

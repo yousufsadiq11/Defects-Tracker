@@ -20,7 +20,7 @@ public ArrayList<Defect> getDefectList() {
 		try {
 			Connection con = DBUtility.getConnection();
 			PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_DEFECT_LIST);
-			stmt.setString(1, "unassigned");
+			stmt.setString(1, "undefined");
 			ResultSet resultSet = stmt.executeQuery();
 			while(resultSet.next()){
 				Defect defect = new Defect();
@@ -49,11 +49,50 @@ public boolean assignLeadDao(String assigned_to, int id) {
 		int x = stmt.executeUpdate();
 		if(x>0)flag=true;
 		DBUtility.closeConnection(con);
-	} catch (SQLException e) {
-		System.err.println("ERROR : \nSQL Error Code : "+e.getErrorCode()+" SQL State : "+e.getSQLState());
+	} catch (Exception ee) {
+		ee.printStackTrace();
+		
 	}
 	
 	return flag;
+	
+}
+
+public String getDefectDescription(int id) {
+	// TODO Auto-generated method stub
+	String defect_name=null;
+	String defect_desc=null;
+	String defect_status=null;
+	String severity=null;
+	String mail_text=null;
+	try {
+		
+		Connection con = DBUtility.getConnection();
+		PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_DEFECT_DETAILS);
+		stmt.setInt(1, id);
+		
+		
+		
+		
+		ResultSet rs = stmt.executeQuery();
+		while(rs.next()){
+			defect_name=rs.getString(2);
+		System.out.println("name"+defect_name);
+		defect_desc=rs.getString(3);
+		defect_status=rs.getString(6);
+		severity=rs.getString(8);
+		}
+		mail_text="Defect Name: "+defect_name+'\n'+"Defect Description: "+defect_desc+"\n"+"Defect Status: "+defect_status+"\nSeverity: "+severity;
+		DBUtility.closeConnection(con);
+	} 
+	catch (Exception ee) {
+		ee.printStackTrace();
+		
+	}
+	return mail_text;
+	
+
+	
 }
 	
 }

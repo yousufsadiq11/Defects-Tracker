@@ -63,7 +63,7 @@ desired effect
       <%if(request.getAttribute("message")!=null){ %>
        <div class="pad margin no-print">
       <div class="callout callout-info" style="margin-bottom: 0!important;">
-        <h4>Defect ID '{{id.selector}}' {{message.selector}} {{lead.selector}}</h4>
+        <h4>Defect ID '{{id}}' {{message}} {{lead}}</h4>
         
       </div>
     </div>

@@ -68,6 +68,12 @@ desired effect
     <!-- Main content -->
     <section class="content">
   <% 
+  String current_email=(String)session.getAttribute("current_email");
+  String current_user=(String)session.getAttribute("current_user");
+  System.out.println("current User_assign_lead_page"+current_user);
+  request.setAttribute("email", current_email);
+  request.setAttribute("current_user", current_user);
+  
 Connection con = DBUtility.getConnection();
 String input=request.getParameter("t");
 PreparedStatement stmt = con.prepareStatement(SQLConstants.GET_SPECIFIC_DEFECT);
@@ -144,6 +150,7 @@ JsonArray jsonArray = new JsonArray();
         
         <form method="post" action="assignLeadsController">
         <input type="hidden" name="hidden" value=<%=request.getParameter("t") %>>
+        <input type="hidden" name="username" value=<%=current_user %>>
         
         <div class="box-body" >
          
