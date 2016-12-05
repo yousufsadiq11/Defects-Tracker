@@ -1,4 +1,4 @@
-package com.dt.userList;
+package com.dt.assignDefect;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UserListControllerTest {
+public class AssignDefectControllerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,10 +27,10 @@ public class UserListControllerTest {
 	}
 
 	@Test
-	public final void testDoPostHttpServletRequestHttpServletResponse() {
-		IUserListBiz userListBiz = new UserListBiz();
-		String listofUsers = userListBiz.getUserList();
-		assertNotEquals(listofUsers, null);
+	public void assignDefecttest() {
+             assignDefectBiz defectListBiz=new assignDefectBiz();
+		     String listofDefects = defectListBiz.getDefectList();
+		     assertNotEquals(listofDefects,null);
 	}
 
 }
