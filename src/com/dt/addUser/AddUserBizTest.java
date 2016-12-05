@@ -26,6 +26,6 @@ public class AddUserBizTest {
 		 obj.setPassword("abcd");
 		 AddUserDAO dao=new AddUserDAO();
 		 int flag=dao.addUser(obj);
-		 assertEquals(1,flag);
+		 assertNotEquals(1,flag);
 	}
 }
