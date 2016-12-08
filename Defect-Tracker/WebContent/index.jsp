@@ -8,16 +8,41 @@
 document.location="DashboardController";//redirect to home page decider
 </script>
 		<%}		 %>
+		 <script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
   <title>DT | Login</title>
   
  <jsp:include page="page/include/styleInfo.jsp"></jsp:include>
  <!-- iCheck -->
   <link rel="stylesheet" href="lib/plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="css/skel.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="hold-transition login-page">
-<div class="login-box">
+<body class="homepage">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+						
+					<!-- Banner -->
+						<div id="banner">
+							<div class="container">
+								<section>
+									<header class="major">
+										<h2>Welcome to Defect Tracker!</h2>
+									</header>
+								</section>			
+							</div>
+						</div>
+
+				</div>
+				<div class="login-box">
   <div class="login-logo">
-    <a href="dashboard.jsp"><b>Defect Tracker</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -52,6 +77,8 @@ document.location="DashboardController";//redirect to home page decider
  -->  </div>
   <!-- /.login-box-body -->
 </div>
+			</div>
+
 <!-- /.login-box -->
 
 <jsp:include page="page/include/script-library.jsp"></jsp:include>
